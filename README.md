@@ -83,10 +83,7 @@ and answers to the site as seed data to better illustrate some of the site featu
 Any remaining time will be spent making the site look better with animations and
 CSS.
 
-[Details][phase-five]
-
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
