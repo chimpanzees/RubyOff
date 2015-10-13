@@ -1,2 +1,12 @@
-<h1>Sandboxes#show</h1>
-<p>Find me in app/views/sandboxes/show.html.erb</p>
+<h1>Sandbox</h1>
+<div class="sandbox">
+  <% userMethod = '
+    def self.double(num)
+      num*2
+    end
+  '%>
+
+  <%= runInSandbox(userMethod + 'self.double(2) == 4') %><br>
+  <%= runInSandbox(userMethod + 'self.double(1) == 2') %><br>
+  <%= runInSandbox(userMethod + 'self.double(5) == 10') %><br>
+</div>
