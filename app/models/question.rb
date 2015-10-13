@@ -15,5 +15,10 @@
 class Question < ActiveRecord::Base
   validates :title, :question, :author_id, :tests_default, presence: true
 
-  belongs_to :author, through: :users
+  belongs_to(
+    :author,
+    class_name: "User",
+    primary_key: :id,
+    foreign_key: :author_id
+  )
 end

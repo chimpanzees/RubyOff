@@ -15,7 +15,12 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :questions
+  has_many(
+    :questions,
+    class_name: "Question",
+    primary_key: :id,
+    foreign_key: :author_id
+  )
 
   attr_reader :password
 
