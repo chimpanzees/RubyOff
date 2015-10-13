@@ -15,6 +15,8 @@
 class Question < ActiveRecord::Base
   validates :title, :question, :author_id, :tests_default, presence: true
 
+  has_many :solutions
+
   belongs_to(
     :author,
     class_name: "User",
