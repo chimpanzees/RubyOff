@@ -21,4 +21,8 @@ class Solution < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
   )
+
+  def self.all_for_question(id)
+    self.where(question_id: id)
+  end
 end

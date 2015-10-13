@@ -37,3 +37,21 @@ question2 = Question.create!(
     self.triple(6) == 18
   '
 )
+solution1 = Solution.create!(
+  body: '
+    def self.double(num)
+      num * 2
+    end
+  ',
+  author_id: nathan.id,
+  question_id: question1.id
+)
+solution2 = Solution.create!(
+  body: '
+    def self.triple(num)
+      num * 3
+    end
+  ',
+  author_id: minh.id,
+  question_id: question2.id
+)

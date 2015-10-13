@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :solutions
   root 'sandboxes#show'
 
   resources :users, only: [:new, :create]
@@ -8,5 +7,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :questions, only: [:create, :destroy, :index, :show]
+    resources :solutions, only: [:create, :index]
   end
 end
