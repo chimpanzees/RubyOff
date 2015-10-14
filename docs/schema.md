@@ -24,7 +24,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
 question_id | integer   | not null, foreign key (references questions), indexed
-body        | string    | not null
+body        | text      | not null
 
 ## tags
 column name | data type | details
