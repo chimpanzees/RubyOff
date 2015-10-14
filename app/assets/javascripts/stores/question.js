@@ -32,6 +32,10 @@
 
     dispatcherID: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
+        case QuestionConstants.QUESTIONS_RECEIVED:
+          resetQuestions(payload.questions);
+          QuestionStore.emit(CHANGE_EVENT);
+          break;
         case QuestionConstants.QUESTION_ADDED:
           resetQuestions(payload.questions);
           QuestionStore.emit(CHANGE_EVENT);

@@ -10,13 +10,12 @@ ApiUtil = {
     });
   },
 
-  fetchQuestions: function (bounds) {
+  fetchQuestions: function () {
     $.ajax({
       url: 'api/questions',
       type: 'get',
-      data: {bounds: bounds},
       success: function (questions) {
-        ApiActions.receiveQuestions(questions);
+        ApiActions.receiveAllQuestions(questions);
       }
     });
   }

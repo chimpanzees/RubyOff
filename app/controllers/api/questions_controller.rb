@@ -1,9 +1,8 @@
 class Api::QuestionsController < ApplicationController
   before_filter :require_signed_in!
-  
+
   def index
     @questions = Question.all()
-    render json: @questions
   end
 
   def create

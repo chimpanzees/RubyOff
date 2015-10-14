@@ -1,1 +1,1 @@
-json.array! @questions, :title, :author_id
+json.array! @questions, :id, :title, :question, :author, :solution_default, :tests_default

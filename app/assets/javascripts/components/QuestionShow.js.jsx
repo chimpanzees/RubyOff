@@ -11,11 +11,11 @@ QuestionShow = React.createClass({
 
   componentDidMount: function () {
     QuestionStore.addChangeListener(this._updateShow);
-    ApiUtil.fetchQuestions(); //??
+    ApiUtil.fetchQuestions();
   },
 
   _updateShow: function () {
-
+    debugger;
   },
 
   _findQuestionById: function (id) {
