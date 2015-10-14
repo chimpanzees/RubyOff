@@ -9,6 +9,15 @@ QuestionShow = React.createClass({
     };
   },
 
+  componentDidMount: function () {
+    QuestionStore.addChangeListener(this._updateShow);
+    ApiUtil.fetchQuestions(); //??
+  },
+
+  _updateShow: function () {
+
+  },
+
   _findQuestionById: function (id) {
     var result;
 
@@ -24,12 +33,13 @@ QuestionShow = React.createClass({
   handleSubmit: function (event) {
     event.preventDefault();
     var questoinSolutionTest = $.extent({},
-      this.state.question,
-      this.state.solution,
-      this.state.tests
+      {question: this.state.question},
+      {solution: this.state.solution},
+      {tests: this.state.tests} // right now, always defualt tests
     )
-    ApiUtil.handleSubmit(questoinSolutionTest);
+    ApiUtil.handleSubmit(questionSolutionTest);
     // Redirect? How to handle where the page goes
+    console.log("running tests..")
   },
 
   handleSkip: function (event) {
@@ -44,6 +54,7 @@ QuestionShow = React.createClass({
         <div className="question-show-title">{this.props.question.title}</div>
         <div className="question-show-author">{this.props.question.author.username}</div>
         <div className="question-show-body">{this.props.question.body}</div>
+        <div className="question-show-tests">{this.props.question.tests_default}</div>
         <form onSubmit={this.handleSubmit}>
           <label>Your Solution</label>
           <input type="text" valueLink={this.linkState('solution')}/>
