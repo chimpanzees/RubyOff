@@ -23,6 +23,19 @@ QuestionShow = React.createClass({
 
   handleSubmit: function (event) {
     event.preventDefault();
+    var questoinSolutionTest = $.extent({},
+      this.state.question,
+      this.state.solution,
+      this.state.tests
+    )
+    ApiUtil.handleSubmit(questoinSolutionTest);
+    // Redirect? How to handle where the page goes
+  },
+
+  handleSkip: function (event) {
+    event.preventDefault();
+    var nextId = QuestionStore.getNextQuestion(this.state.question.id);
+    this.props.history.pushState(null, "questions/" + nextId);
   },
 
   render: function () {
