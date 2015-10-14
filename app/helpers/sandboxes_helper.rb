@@ -5,6 +5,9 @@ module SandboxesHelper
     priv.allow_method :*
     priv.allow_method :==
     priv.allow_method :singleton_method_added
-    s.run(priv, string)
+    begin
+      s.run(priv, string)
+    rescue
+
   end
 end
