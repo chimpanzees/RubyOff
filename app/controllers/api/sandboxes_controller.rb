@@ -5,7 +5,7 @@ class Api::SandboxesController < ApplicationController
     question = params[:question]
     solution = params[:solution]
     tests = params[:tests]
-    result = runInSandbox(solution + tests)
+    result = Sandbox.runTests(solution, tests)
     render json: result
   end
 end
