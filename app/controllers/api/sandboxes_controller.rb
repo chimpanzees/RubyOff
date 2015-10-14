@@ -1,7 +1,7 @@
-class SandboxesController < ApplicationController
+class Api::SandboxesController < ApplicationController
   before_filter :require_signed_in!
 
-  def run
+  def create
     question = params[:question]
     solution = params[:solution]
     tests = params[:tests]

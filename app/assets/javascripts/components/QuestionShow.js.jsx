@@ -47,7 +47,7 @@ QuestionShow = React.createClass({
 
   handleSubmit: function (event) {
     event.preventDefault();
-    var questoinSolutionTest = $.extent({},
+    var questionSolutionTest = $.extend({},
       {question: this.state.question},
       {solution: this.state.solution},
       {tests: this.state.tests}
@@ -82,11 +82,15 @@ QuestionShow = React.createClass({
         <form onSubmit={this.handleSubmit}>
           <label>Your Solution: </label>
           <textarea className="question-show-solution"
-                    valueLink={this.linkState('solution')}></textarea>
+                    valueLink={this.linkState('solution')}
+                    rows="6"
+                    cols="50"></textarea>
           <br/>
           <label>Your Test Cases</label>
           <textarea className="question-show-tests"
-                    valueLink={this.linkState('tests')}></textarea>
+                    valueLink={this.linkState('tests')}
+                    rows="6"
+                    cols="50"></textarea>
           <br/>
 
           <input type="submit" value="Submit"/>
