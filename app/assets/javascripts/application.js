@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require react
+//= require ReactRouter.min
 //= require react_ujs
 //= require components
 //= require flux
