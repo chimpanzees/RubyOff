@@ -1,6 +1,8 @@
 QuestionShow = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function () {
-    var questionId = this.props.params.questionId;
+    var questionId = parseInt(this.props.params.questionId);
     var question = this._findQuestionById(questionId);
     return {
       question: question,
@@ -15,15 +17,15 @@ QuestionShow = React.createClass({
   },
 
   _updateShow: function () {
-    debugger;
+    console.log("_updateShow was called.");
   },
 
   _findQuestionById: function (id) {
     var result;
 
     QuestionStore.all().forEach(function (question) {
-      if (id === quesiton.id) {
-        result = quesiton;
+      if (id === question.id) {
+        result = question;
       }
     }.bind(this))
 
@@ -49,23 +51,35 @@ QuestionShow = React.createClass({
   },
 
   render: function () {
+    debugger;
     return (
       <div className="question-show">
-        <div className="question-show-title">{this.props.question.title}</div>
-        <div className="question-show-author">{this.props.question.author.username}</div>
-        <div className="question-show-body">{this.props.question.body}</div>
-        <div className="question-show-tests">{this.props.question.tests_default}</div>
+        <div className="question-show-title">
+          Title: {this.state.question.title}
+        </div><br/>
+
+        <div className="question-show-author">
+          By: {this.state.question.author.username}
+        </div><br/>
+
+        <div className="question-show-body">
+          Question: {this.state.question.question}
+        </div><br/>
+
         <form onSubmit={this.handleSubmit}>
-          <label>Your Solution</label>
-          <input type="text" valueLink={this.linkState('solution')}/>
+          <label>Your Solution: </label>
+          <textarea className="question-show-solution"
+                    valueLink={this.linkState('solution')}></textarea>
           <br/>
-          // <label>Your Test Cases</label>
-          // <input type="text" valueLink={this.linkState('tests')}/>
-          // <br/>
+          <label>Your Test Cases</label>
+          <textarea className="question-show-tests"
+                    valueLink={this.linkState('tests')}></textarea>
+          <br/>
+
           <input type="submit" value="Submit"/>
         </form>
-        <button onClick={this.handleSkip}>Skip</button>
-        <button onClick={this.handleGiveUp}>Give Up</button>
+        <button onClick={this.handleSkip}>Skip</button><br/>
+        <button onClick={this.handleGiveUp}>Give Up</button><br/>
       </div>
     );
   }

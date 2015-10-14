@@ -31,11 +31,10 @@ QuestionsIndex = React.createClass({
         <h2>Questions</h2>
         {
           this.state.questions.map(function (question) {
-            var boundClick = handleItemClick.bind(this, question);
-            return <QuestionsIndexItem onClick={boundClick}
+            return <QuestionsIndexItem onClick={this.handleItemClick.bind(this, question)}
                                        question={question}
                                        key={question.id}/>;
-          })
+          }.bind(this))
         }
       </div>
     );
