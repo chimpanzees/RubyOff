@@ -1,3 +1,7 @@
+function _getCurrentQuestion(id) {
+  return QuestionStore.getQuestionById(id);
+};
+
 QuestionShow = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
@@ -17,6 +21,15 @@ QuestionShow = React.createClass({
   },
 
   _updateShow: function () {
+    // Need a way of updating the states
+    var currentQuestion = _getCurrentQuestion(
+      parseInt(this.props.params.questionId)
+    );
+    this.setState({
+      question: currentQuestion,
+      solution: currentQuestion.solution_default,
+      tests: currentQuestion.tests_default
+    })
     console.log("_updateShow was called.");
   },
 
@@ -37,7 +50,7 @@ QuestionShow = React.createClass({
     var questoinSolutionTest = $.extent({},
       {question: this.state.question},
       {solution: this.state.solution},
-      {tests: this.state.tests} // right now, always defualt tests
+      {tests: this.state.tests}
     )
     ApiUtil.handleSubmit(questionSolutionTest);
     // Redirect? How to handle where the page goes
@@ -48,10 +61,10 @@ QuestionShow = React.createClass({
     event.preventDefault();
     var nextId = QuestionStore.getNextQuestion(this.state.question.id);
     this.props.history.pushState(null, "questions/" + nextId);
+    this._updateShow();
   },
 
   render: function () {
-    debugger;
     return (
       <div className="question-show">
         <div className="question-show-title">

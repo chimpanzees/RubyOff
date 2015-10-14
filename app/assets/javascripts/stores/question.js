@@ -11,9 +11,19 @@
       return _questions.slice();
     },
 
+    getQuestionById: function (id) {
+      var res = null;
+      _questions.forEach(function (question) {
+        if (question.id === id) {
+          res = question;
+        }
+      });
+      return res;
+    },
+
     getNextQuestion: function (id) {
       var currentIndex = 0;
-      _question.forEach(function (question, index) {
+      _questions.forEach(function (question, index) {
         if (question.id === id) {
           currentIndex = index;
         }
