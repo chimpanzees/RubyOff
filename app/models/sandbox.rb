@@ -23,13 +23,17 @@ class Sandbox < ActiveRecord::Base
   ]
 
   def self.runTests(solutionString, testString)
-    tests = testString.split()
-    tests.map do |t|
-      runInSandbox(solutionString + " " + t)
+    tests = self.cleanTestString(testString)
+    result = tests.map do |t|
+      self.runInSandbox(solutionString + " " + t)
     end
   end
 
-  def runInSandbox(string)
+  def self.cleanTestString(tests)
+    tests.split("\n").map { |el| el.strip() }.reject { |el| el.empty? }
+  end
+
+  def self.runInSandbox(string)
     s = Shikashi::Sandbox.new
     priv = Shikashi::Privileges.new
     ALLOWED_METHODS.each { |method| priv.allow_method(method) }
