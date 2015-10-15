@@ -30,5 +30,15 @@ ApiUtil = {
         ApiActions.receiveCurrentQuestionId(id);
       }.bind(this)
     });
+  },
+
+  fetchQuestions: function () {
+    $.ajax({
+      url: 'api/questions',
+      type: 'get',
+      success: function (questions) {
+        ApiActions.receiveAllQuestions(questions);
+      }
+    });
   }
 };
