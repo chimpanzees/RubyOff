@@ -54,10 +54,6 @@
           resetQuestions(payload.questions);
           QuestionStore.emit(CHANGE_EVENT);
           break;
-        case QuestionConstants.RESULT_RECEIVED:
-          // payload.result need to get the result to the user
-          QuestionStore.emit(CHANGE_EVENT);
-          break;
       }
     })
   });

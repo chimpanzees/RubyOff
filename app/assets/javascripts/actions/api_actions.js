@@ -8,7 +8,7 @@ ApiActions = {
 
   receiveSandboxResult: function (result) {
     AppDispatcher.dispatch({
-      actionType: QuestionConstants.RESULT_RECEIVED,
+      actionType: SolutionConstants.TEST_RESULT_RECEIVED,
       result: result
     });
   }

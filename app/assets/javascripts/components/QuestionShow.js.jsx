@@ -17,6 +17,7 @@ QuestionShow = React.createClass({
 
   componentDidMount: function () {
     QuestionStore.addChangeListener(this._updateShow);
+    SolutionStore.addChangeListener(this._updateSolutionResults);
     ApiUtil.fetchQuestions();
   },
 
@@ -45,14 +46,18 @@ QuestionShow = React.createClass({
     return result;
   },
 
-  handleSubmit: function (event) {
+  _updateSolutionResults: function () {
+    // The solution.results needs to change
+  },
+
+  runTests: function (event) {
     event.preventDefault();
     var questionSolutionTest = $.extend({},
       {question: this.state.question},
       {solution: this.state.solution},
       {tests: this.state.tests}
     )
-    ApiUtil.handleSubmit(questionSolutionTest);
+    ApiUtil.runTests(questionSolutionTest);
     // Redirect? How to handle where the page goes
     console.log("running tests..")
   },
@@ -79,7 +84,7 @@ QuestionShow = React.createClass({
           Question: {this.state.question.question}
         </div><br/>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.runTests}>
           <label>Your Solution: </label>
           <textarea className="question-show-solution"
                     valueLink={this.linkState('solution')}
@@ -93,8 +98,11 @@ QuestionShow = React.createClass({
                     cols="50"></textarea>
           <br/>
 
-          <input type="submit" value="Submit"/>
+          <input type="submit" value="Run tests"/>
         </form>
+        <TestOutput className="question-show-solution-result"
+                    solution={this.state.solution}
+                    questionId={this.state.question.id}/>
         <button onClick={this.handleSkip}>Skip</button><br/>
         <button onClick={this.handleGiveUp}>Give Up</button><br/>
       </div>
