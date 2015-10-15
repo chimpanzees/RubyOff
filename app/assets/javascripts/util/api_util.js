@@ -1,11 +1,11 @@
 ApiUtil = {
-  runTests: function (questionSolutionTest) {
+  runTests: function (body, tests, output) {
     $.ajax({
       type: 'post',
       url: 'api/sandbox',
-      data: questionSolutionTest,
-      success: function (result) {
-        ApiActions.receiveSandboxResult(result);
+      data: {body: body, tests: tests, output: output},
+      success: function (results) {
+        ApiActions.receiveTestResults(results);
       }
     });
   },

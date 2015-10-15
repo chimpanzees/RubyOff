@@ -1,24 +1,29 @@
 (function(root) {
-  var _solutions;
+  // var _solutions;
+  var _output;
   var CHANGE_EVENT = "change";
 
-  function resetSolution(soutions) {
-    _solutions = solutions.slice();
-  }
+  // function resetSolution(soutions) {
+  //   _solutions = solutions.slice();
+  // }
 
   var SolutionStore = root.SolutionStore = $.extend({}, EventEmitter.prototype, {
-    all: function () {
-      return _solutions.slice();
-    },
+    // all: function () {
+    //   return _solutions.slice();
+    // },
 
-    getSolutionById: function (id) {
-      var res = null;
-      _solutions.forEach(function (solution) {
-        if (solution.id === id) {
-          res = solution;
-        }
-      });
-      return res;
+    // getSolutionById: function (id) {
+    //   var res = null;
+    //   _solutions.forEach(function (solution) {
+    //     if (solution.id === id) {
+    //       res = solution;
+    //     }
+    //   });
+    //   return res;
+    // },
+
+    getOutput: function () {
+      return $.extend({}, _output);
     },
 
     addChangeListener: function (callback) {
@@ -31,21 +36,21 @@
 
     dispatcherID: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
-        case SolutionConstants.SOLUTIONS_RECEIVED:
-          resetSolution(payload.solutions);
-          SolutionStore.emit(CHANGE_EVENT);
-          break;
-        case SolutionConstants.SOLUTION_ADDED:
-          resetSolution(payload.solutions);
-          SolutionStore.emit(CHANGE_EVENT);
-          break;
-        case SolutionConstants.SOLUTION_REMOVED:
-          resetSolution(payload.solutions);
-          SolutionStore.emit(CHANGE_EVENT);
-          break;
-        case SolutionConstants.TEST_RESULT_RECEIVED:
+      //   case SolutionConstants.SOLUTIONS_RECEIVED:
+      //     resetSolution(payload.solutions);
+      //     SolutionStore.emit(CHANGE_EVENT);
+      //     break;
+      //   case SolutionConstants.SOLUTION_ADDED:
+      //     resetSolution(payload.solutions);
+      //     SolutionStore.emit(CHANGE_EVENT);
+      //     break;
+      //   case SolutionConstants.SOLUTION_REMOVED:
+      //     resetSolution(payload.solutions);
+      //     SolutionStore.emit(CHANGE_EVENT);
+      //     break;
+        case SolutionConstants.TEST_RESULTS_RECEIVED:
           // payload.result is our result!
-          // this._updateSolutionResult(payload.result)
+          _output = payload.results;
           SolutionStore.emit(CHANGE_EVENT);
           break;
       }

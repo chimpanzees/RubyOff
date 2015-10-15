@@ -6,10 +6,10 @@ ApiActions = {
     });
   },
 
-  receiveSandboxResult: function (result) {
+  receiveTestResults: function (results) {
     AppDispatcher.dispatch({
-      actionType: SolutionConstants.TEST_RESULT_RECEIVED,
-      result: result
+      actionType: SolutionConstants.TEST_RESULTS_RECEIVED,
+      results: results
     });
   }
 };
