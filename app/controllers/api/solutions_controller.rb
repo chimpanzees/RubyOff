@@ -1,7 +1,8 @@
 class Api::SolutionsController < ApplicationController
   before_filter :require_signed_in!
-  
+
   def create
+    # Grab the current user and include it!
     @solution = Solution.new(solution_params)
     render json: @solution
   end

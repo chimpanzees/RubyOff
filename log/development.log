@@ -14121,3 +14121,60 @@ Processing by Api::SandboxesController#create as JSON
   Parameters: {"question"=>{"id"=>"1", "title"=>"Doubler", "question"=>"Write a class method that doubles an input number.", "author"=>{"id"=>"1", "username"=>"Minh", "password_digest"=>"[FILTERED]", "session_token"=>"mHnQjYXryeLKjsLWE2lm9g", "created_at"=>"2015-10-14T21:00:25.229Z", "updated_at"=>"2015-10-14T21:00:25.229Z"}, "solution_default"=>"\n    def self.double(num)\n      # code goes here...\n    end\n  ", "tests_default"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}, "solution"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
 Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 08:50:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_errors.html.erb (1.5ms)
+Completed 200 OK in 5236ms (Views: 5153.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/assets/components/QuestionShow.self-5a77821f947be7c550c2dd60ef27c88397e32b9f91814bfa13364a6cca8deafd.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/assets/components/TestOutput.self-8555b83a5fb9ce40e5e6484c50619200ff9f34b3241c7554750a8a81050c479a.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/assets/actions/api_actions.self-3bcdeda76bbaa9ef1c5fc21b6c45b94d2aeb1e87e5221728aa0631e019258ed2.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/assets/constants/solution_constants.self-3613fe6f10507fcda4c496a7aa582053361ae9e323e69b6c4f7a16551f4a645e.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/assets/stores/question.self-b1edb0bbec6e071232805da0ef889c8550a78b5cfe4ce0ae168e900c447b76ba.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/assets/stores/solution.self-ad1e4c28950438011e18d4aa9654808a7f0eefea910f5b139d30fe34d5cf7ed8.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/assets/util/api_util.self-14009cbced1a92d5629803a5623e36b398c3f731b132c82bc95528c31d588cec.js?body=1" for ::1 at 2015-10-15 08:50:54 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 08:50:55 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (1.4ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (202.1ms)
+Completed 200 OK in 273ms (Views: 208.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 08:50:58 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (18.3ms)
+Completed 200 OK in 35ms (Views: 24.7ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 08:51:09 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"question"=>{"id"=>"1", "title"=>"Doubler", "question"=>"Write a class method that doubles an input number.", "author"=>{"id"=>"1", "username"=>"Minh", "password_digest"=>"[FILTERED]", "session_token"=>"mHnQjYXryeLKjsLWE2lm9g", "created_at"=>"2015-10-14T21:00:25.229Z", "updated_at"=>"2015-10-14T21:00:25.229Z"}, "solution_default"=>"\n    def self.double(num)\n      # code goes here...\n    end\n  ", "tests_default"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}, "solution"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 44ms (Views: 0.5ms | ActiveRecord: 0.7ms)
