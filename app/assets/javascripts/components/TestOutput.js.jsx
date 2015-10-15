@@ -14,26 +14,13 @@ TestOutput = React.createClass({
   },
 
   _updateOutput: function () {
+    // Need a way of getting the test reults from the ApiActions
+    // Right now, it is being given to the SolutionStore
+    // SolutionStore should change its data and emit and change event
+    // which will call this function
     this.setState({output: currentQuestion});
     console.log("_updateShow was called.");
   },
-
-  _findQuestionById: function (id) {
-    var result;
-
-    QuestionStore.all().forEach(function (question) {
-      if (id === question.id) {
-        result = question;
-      }
-    }.bind(this));
-
-    return result;
-  },
-
-  _updateSolutionResults: function () {
-    // The solution.results needs to change
-  },
-
 
   render: function () {
     return (
