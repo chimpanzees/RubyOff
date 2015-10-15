@@ -1,48 +1,49 @@
 QuestionShow = React.createClass({
+  mixins: [ReactRouter.History],
+
   getInitialState: function () {
-    var questionId = parseInt(this.props.params.questionId);
-    var question = this._findQuestionById(questionId) || {};
-    return {question: question};
+    return {question: {}};
   },
 
   componentDidMount: function () {
     QuestionStore.addChangeListener(this._questionChanged);
-    ApiUtil.fetchQuestions();
+    ApiUtil.fetchQuestionsAndSetCurrent(parseInt(this.props.params.questionId));
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var question = this._findQuestionById(parseInt(newProps.params.questionId));
+    this.setState({question: question})
   },
 
   _questionChanged: function () {
-    var questionId = parseInt(this.props.params.questionId)
-    // TODO: eliminate parseInt ^^
-    var question = this._findQuestionById(questionId);
-    this.setState({question: question})
+    var question = QuestionStore.currentQuestion();
+    this.setState({question: question});
   },
 
   _findQuestionById: function (id) {
     var result;
-
     QuestionStore.all().forEach(function (question) {
       if (id === question.id) {
         result = question;
       }
     }.bind(this))
-
     return result;
   },
 
   handleSkip: function (event) {
-    // TODO: improve by not sending id to store
     event.preventDefault();
-    var nextId = QuestionStore.getNextQuestion(this.state.question.id);
-    this.props.history.pushState(null, "questions/" + nextId);
-    this._questionChanged();
+    ApiActions.receiveSkipRequest()
+    var currentQuestion = QuestionStore.currentQuestion();
+    this.history.pushState(null, "/questions/" + currentQuestion.id, {});
   },
 
   handleGiveUp: function (event) {
     event.preventDefault();
-    // TODO
+    // TODO once solutions index is written
   },
 
   render: function () {
+    var author = this.state.question.author || {}
     return (
       <div className="question-show">
         <div className="question-show-title">
@@ -50,7 +51,7 @@ QuestionShow = React.createClass({
         </div><br/>
 
         <div className="question-show-author">
-          By: {this.state.question.author.username}
+          By: {author.username}
         </div><br/>
 
         <div className="question-show-body">

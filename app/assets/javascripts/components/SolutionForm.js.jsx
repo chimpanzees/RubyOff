@@ -12,14 +12,24 @@ SolutionForm = React.createClass({
   },
 
   componentDidMount: function () {
+    // this.setState({
+    //   questionId: this.props.questionId,
+    //   body: this.props.solution_default,
+    //   tests_default: this.props.tests_default,  // for submition
+    //   tests: this.props.tests_default,         // for editing
+    //   output: {}
+    // });
+    SolutionStore.addChangeListener(this._solutionChanged);
+  },
+
+  componentWillReceiveProps: function (newProps) {
     this.setState({
-      questionId: this.props.questionId,
-      body: this.props.solution_default,
-      tests_default: this.props.tests_default,  // for submition
-      tests: this.props.tests_default,         // for editing
+      questionId: newProps.questionId,
+      body: newProps.solution_default,
+      tests_default: newProps.tests_default,  // for submition
+      tests: newProps.tests_default,         // for editing
       output: {}
     });
-    SolutionStore.addChangeListener(this._solutionChanged);
   },
 
   _solutionChanged: function () {
@@ -30,11 +40,17 @@ SolutionForm = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
+    ApiUtil.trySubmit(
+      this.state.questionId,
+      this.state.body,
+      this.state.tests
+    );
+    this.setState({output: {running: "Submitting"}});
   },
 
   handleRunTests: function (e) {
     e.preventDefault();
-    ApiUtil.runTests(this.state.body, this.state.tests, this.state.output);
+    ApiUtil.runTests(this.state.body, this.state.tests_default);
     this.setState({output: {running: "Running tests"}});
   },
 
@@ -44,7 +60,8 @@ SolutionForm = React.createClass({
       if (typeof this.state.output[result].success !== 'undefined') {
         // Successful output
         var out = this.state.output[result].success;
-        results.push(<li className="success" key={result}>{out}</li>);
+        var aboutToPush = <li className="success" key={result}>{out.toString()}</li>;
+        results.push(aboutToPush);
       } else if (typeof this.state.output[result].running !== 'undefined') {
         // Running tests
         results.push(<li className="running">Running tests...</li>);
@@ -57,7 +74,7 @@ SolutionForm = React.createClass({
         );
       }
     }.bind(this));
-    debugger;
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -77,13 +94,7 @@ SolutionForm = React.createClass({
           <button onClick={this.handleRunTests}>Run Tests</button>
           <button onClick={this.handleSubmit}>Submit</button>
         </form>
-        <ul className="solution-form-results">
-          {
-            results.forEach(function (result) {
-              return result;
-            })
-          }
-        </ul>
+        <ul className="solution-form-results">{ results }</ul>
       </div>
     );
   }

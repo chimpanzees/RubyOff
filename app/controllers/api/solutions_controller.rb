@@ -2,7 +2,16 @@ class Api::SolutionsController < ApplicationController
   before_filter :require_signed_in!
 
   def create
-    # Grab the current user and include it!
+    author_id = current_user.id
+    body = params[:body]
+    tests = params[:tests]
+    output = params[:output]
+    results = Sandbox.runTests(body, tests)
+    fail
+    resultsHash = {}
+    results.each_with_index do |result, i|
+      resultsHash["test_#{i}"] = result
+    end
     @solution = Solution.new(solution_params)
     render json: @solution
   end
