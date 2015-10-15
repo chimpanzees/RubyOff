@@ -25,7 +25,7 @@ SolutionForm = React.createClass({
   _solutionChanged: function () {
     var output = SolutionStore.getOutput();
     this.setState({output: output});
-    debugger;
+    // debugger;
   },
 
   handleSubmit: function (e) {
@@ -40,15 +40,24 @@ SolutionForm = React.createClass({
 
   render: function () {
     var results = [];
-    for (var result in this.state.output) {
-      var type = result[0][0];
-      var out = result[0][1];
-      if (type === "success" /* string? */) {
-        results.push(<li className="success">{out}</li>);
+    Object.keys(this.state.output).map(function (result) {
+      if (typeof this.state.output[result].success !== 'undefined') {
+        // Successful output
+        var out = this.state.output[result].success;
+        results.push(<li className="success" key={result}>{out}</li>);
+      } else if (typeof this.state.output[result].running !== 'undefined') {
+        // Running tests
+        results.push(<li className="running">Running tests...</li>);
       } else {
-        results.push(<li className="error">{out}</li>);
+        // Error of some type
+        var errorType = this.state.output[result].error;
+        var errorMessage = this.state.output[result].message;
+        results.push(
+          <li className="error" key={result}>{errorType}: {errorMessage}</li>
+        );
       }
-    }
+    }.bind(this));
+    debugger;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

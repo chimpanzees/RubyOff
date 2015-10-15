@@ -14898,3 +14898,985 @@ Processing by Api::SandboxesController#create as JSON
   Parameters: {"body"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
 Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:12:57 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 1741ms (Views: 1737.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/components/SolutionForm.self-2f9af027bd6548ffee63bd0ae175bb0bf2b53e935798638820f8d54b35164dac.js?body=1" for ::1 at 2015-10-15 11:12:59 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:13:00 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (8.6ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:13:01 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (8.6ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:13:07 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:19:01 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 290ms (Views: 287.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:19:02 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (6.4ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:19:04 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (9.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.2ms)
+Completed 200 OK in 31ms (Views: 16.8ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:19:10 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:19:48 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 1709ms (Views: 1705.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/components/SolutionForm.self-02e0d97257058fd8ad91400188ab6dded72c9d1fc5d78ae832b371aa3962827a.js?body=1" for ::1 at 2015-10-15 11:19:50 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:19:50 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (12.7ms)
+Completed 200 OK in 25ms (Views: 17.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:20:19 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (8.6ms)
+Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:20:45 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      nu\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:27:19 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 1782ms (Views: 1778.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/components/SolutionForm.self-7132d2951ade58f42f1c62c77024b83a36d06288f1ec4d88a6fa3cdee4f708f0.js?body=1" for ::1 at 2015-10-15 11:27:21 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:27:21 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (1.1ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.1ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:27:23 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.9ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (7.0ms)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:27:25 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      # code goes here...\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:28:02 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      test\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  ", "output"=>{"0"=>{"success"=>"false"}, "1"=>{"success"=>"false"}, "2"=>{"success"=>"false"}}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:28:56 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.3ms)
+Completed 200 OK in 1597ms (Views: 1594.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/sandboxes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/solutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/components/QuestionShow.self-4ec9bd063d35ce86c0d90c3a2f4bd506ec78fd5fb3c22f4527ab008fbc1e24ec.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/components/QuestionsIndex.self-ff73f1fef995bda8792acb18cc2aefccb6b949a5469eb465db33e530c47403e4.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/components/QuestionsIndexItem.self-06fb52c9a393ada12f5464427b26ff0ad80c63dc9f690e678818a68629aa9aef.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/components/SolutionForm.self-fb1c560caebb7d5ec8b1d3316dfa8b85dff53e9d695c6172dfbf542c64aea2be.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/components/TestOutput.self-8555b83a5fb9ce40e5e6484c50619200ff9f34b3241c7554750a8a81050c479a.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/flux.self-d49657677b043fd9a5b56222b931c6dc76b57db2cff9d5967d80f300ee2f4545.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/actions/api_actions.self-674ddf7ad50cdc2dd7b9a94c545cb9a94cfda636f9f5884c5498362965cf642d.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/constants/solution_constants.self-559f75a71b71369bf72fb0be6434d2ae0b5b7a1c05d785cd0f95ff1001470d71.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/constants/question_constants.self-14b3d5a552c40406b2bf3f7a7c95043407be60a1bda40f9f95b413b11d0ae518.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/dispatcher/dispatcher.self-27d32ce23a523f84ac3386e725bc78d6b63ecc0427feb3361640e6233142ae34.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/questions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/ruby_off.self-78c25e0f2aa553fa1e144902409e3c4b207140a441f63272023a19e585d5e3de.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/sandboxes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/solutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/stores/question.self-b1edb0bbec6e071232805da0ef889c8550a78b5cfe4ce0ae168e900c447b76ba.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/stores/solution.self-3001d943e31a8d3b1f611d16dba1fd2c6e6882624e0568cd0ef952a9d54646a6.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/util/api_util.self-0109aae68a6dcc5ec42655ab78ac0eb7d65bd35b40a948f58b1010faccafcaca.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2015-10-15 11:28:58 -0700
+
+
+Started GET "/" for ::1 at 2015-10-15 11:29:06 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 284ms (Views: 281.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:29:07 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (7.5ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:29:08 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.9ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:29:10 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      # code goes here...\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (150.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 167ms (Views: 0.3ms | ActiveRecord: 150.9ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:29:18 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      test\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  ", "output"=>{"0"=>{"success"=>"false"}, "1"=>{"success"=>"false"}, "2"=>{"success"=>"false"}}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:29:34 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 1702ms (Views: 1698.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/components/SolutionForm.self-f3bccf46a78ca560e5c1a4e141dcd5401f98ee874ad1518a8d5352ce1f33493c.js?body=1" for ::1 at 2015-10-15 11:29:36 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:29:37 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (1.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.9ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:29:47 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (1.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (7.0ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:29:54 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      # cot\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:31:48 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 1783ms (Views: 1781.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:31:50 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.3ms)
+Completed 200 OK in 370ms (Views: 367.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/components/SolutionForm.self-54816591ca1aa5ea2e518db5ed9b61d5b8f373fc6f406bc0bc8170d35128b16e.js?body=1" for ::1 at 2015-10-15 11:31:50 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:31:51 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.4ms)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:31:52 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (1.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (10.0ms)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:31:58 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:34:23 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 331ms (Views: 313.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:34:24 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.9ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (23.6ms)
+Completed 200 OK in 40ms (Views: 25.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:34:25 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (14.0ms)
+Completed 200 OK in 26ms (Views: 20.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:34:30 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+SyntaxError - SyntaxError:
+  partialruby (0.3.0) lib/partialruby.rb:93:in `rescue in packet'
+  partialruby (0.3.0) lib/partialruby.rb:90:in `packet'
+  evalhook (0.6.0) lib/evalhook.rb:286:in `packet'
+  evalhook (0.6.0) lib/evalhook.rb:264:in `evalhook_i'
+  evalhook (0.6.0) lib/evalhook.rb:313:in `evalhook'
+  shikashi (0.6.0) lib/shikashi/sandbox.rb:497:in `block in run_i'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/timeout.rb:74:in `timeout'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/timeout.rb:125:in `timeout'
+  shikashi (0.6.0) lib/shikashi/sandbox.rb:462:in `run_i'
+  shikashi (0.6.0) lib/shikashi/sandbox.rb:341:in `run'
+  app/models/sandbox.rb:42:in `runInSandbox'
+  app/models/sandbox.rb:28:in `block in runTests'
+  app/models/sandbox.rb:27:in `runTests'
+  app/controllers/api/sandboxes_controller.rb:7:in `create'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started GET "/__better_errors" for ::1 at 2015-10-15 11:34:45 -0700
+
+
+Started POST "/__better_errors/edee960788b8b472/variables" for ::1 at 2015-10-15 11:34:45 -0700
+
+
+Started GET "/__better_errors" for ::1 at 2015-10-15 11:34:46 -0700
+
+
+Started POST "/__better_errors/edee960788b8b472/variables" for ::1 at 2015-10-15 11:34:47 -0700
+
+
+Started GET "/" for ::1 at 2015-10-15 11:35:19 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_errors.html.erb (0.8ms)
+Completed 200 OK in 411ms (Views: 408.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:35:26 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 341ms (Views: 338.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:35:27 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (5.3ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:35:29 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (4.8ms)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:35:33 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+RuntimeError - :
+  app/controllers/api/sandboxes_controller.rb:8:in `create'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Patrick/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started GET "/__better_errors" for ::1 at 2015-10-15 11:35:39 -0700
+
+
+Started POST "/__better_errors/b0460379166deb88/variables" for ::1 at 2015-10-15 11:35:40 -0700
+
+
+Started GET "/__better_errors" for ::1 at 2015-10-15 11:35:40 -0700
+
+
+Started POST "/__better_errors/b0460379166deb88/variables" for ::1 at 2015-10-15 11:35:40 -0700
+
+
+Started POST "/__better_errors/b0460379166deb88/eval" for ::1 at 2015-10-15 11:35:48 -0700
+
+
+Started POST "/__better_errors/b0460379166deb88/eval" for ::1 at 2015-10-15 11:36:11 -0700
+
+
+Started POST "/__better_errors/b0460379166deb88/eval" for ::1 at 2015-10-15 11:37:00 -0700
+
+
+Started POST "/__better_errors/b0460379166deb88/variables" for ::1 at 2015-10-15 11:38:52 -0700
+
+
+Started GET "/" for ::1 at 2015-10-15 11:38:55 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 250ms (Views: 233.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:38:56 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (2.7ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (35.1ms)
+Completed 200 OK in 60ms (Views: 36.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:38:57 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.4ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:39:01 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:41:43 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 1920ms (Views: 1917.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/components/SolutionForm.self-d467f003e568b40b518fa8552183a7951fc7f558b04ae10a80d60bb980175c42.js?body=1" for ::1 at 2015-10-15 11:41:45 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:41:46 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (8.6ms)
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:41:47 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (4.9ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (12.7ms)
+Completed 200 OK in 24ms (Views: 15.2ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:41:51 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 29ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:42:37 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 1915ms (Views: 1912.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/components/SolutionForm.self-bcae0d6db56a6ac3aa661d486779a73cd0097254c2e08cf3f7c4c9fd61f703e7.js?body=1" for ::1 at 2015-10-15 11:42:39 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:42:39 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.1ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:42:41 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (10.4ms)
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:42:46 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      4\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:51:36 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 1574ms (Views: 1570.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/components/SolutionForm.self-7e1ea6c9d5b927f367af2305ef5d48e34a0b0efc4a6fea04192cb83743fde949.js?body=1" for ::1 at 2015-10-15 11:51:38 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:51:38 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (10.5ms)
+Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:51:40 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (9.9ms)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:54:28 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:56:16 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 1698ms (Views: 1692.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/components/SolutionForm.self-8170b1ca2f26f96677c9ea296c2c97ddfbc7174998c6bfafc677cd43483fd803.js?body=1" for ::1 at 2015-10-15 11:56:18 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:56:19 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (10.3ms)
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:56:21 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (4.6ms)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:56:29 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      num * 2\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 11:57:15 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 1681ms (Views: 1674.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/components/SolutionForm.self-ad8ae1a1fcd27be88873d69241258167ed5f77bd7e3305d1e88fd42f2842ddd2.js?body=1" for ::1 at 2015-10-15 11:57:17 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:57:18 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (13.1ms)
+Completed 200 OK in 31ms (Views: 22.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 11:57:20 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (5.4ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 11:57:30 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 12:02:42 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 1586ms (Views: 1582.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/components/SolutionForm.self-f16292fa1b625f4df68e4a7c9e1d672144496ba274469858e85b4930422fcbaf.js?body=1" for ::1 at 2015-10-15 12:02:44 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 12:02:44 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (6.9ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 12:02:45 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.9ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (5.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (6.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (19.8ms)
+Completed 200 OK in 34ms (Views: 18.8ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 12:02:52 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-15 12:04:54 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 1700ms (Views: 1694.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/components/SolutionForm.self-1e2c37029f2154d5f6ecb7188380e7f842307a2041c90c082c082b1c6abae050.js?body=1" for ::1 at 2015-10-15 12:04:56 -0700
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 12:04:57 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (10.8ms)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/questions" for ::1 at 2015-10-15 12:05:02 -0700
+Processing by Api::QuestionsController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered api/questions/index.json.jbuilder (5.5ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/sandbox" for ::1 at 2015-10-15 12:05:11 -0700
+Processing by Api::SandboxesController#create as JSON
+  Parameters: {"body"=>"\n    def self.double(num)\n      3\n    end\n  ", "tests"=>"\n    self.double(2) == 4\n    self.double(1) == 2\n    self.double(6) == 12\n  "}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "2qe5skvoWswMWE2GNA-auA"]]
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 0.5ms)
