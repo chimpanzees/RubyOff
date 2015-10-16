@@ -7,8 +7,7 @@ $(function(){
   var App = React.createClass({
     render: function(){
       return (
-          <div>
-            <header><h1>RubyOff!</h1></header>
+          <div class="app">
             {this.props.children}
           </div>
       );

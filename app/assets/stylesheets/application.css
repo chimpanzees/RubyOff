@@ -13,3 +13,159 @@
  *= require_tree .
  *= require_self
  */
+html, body, header, nav, h1, a, ul, li, strong, main, button, i,
+section, img, div, h2, p, form, fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  background-color: #303133;
+  color: #efefef;
+}
+
+h1 h2 {
+  text-rendering: optimizeLegibility;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.header a {
+  display: block;
+  padding: 20px 20px;
+}
+
+.header-nav {
+  margin: 0 auto;
+}
+
+.header-logo {
+  background-color: rgba(0,0,0,0.2);
+  color: #c9c9c9;
+  float: left;
+  margin-left: 20px;
+  transition: color 0.2s ease-in-out;
+}
+
+.header-logo:hover {
+  color: silver;
+}
+
+.header-list {
+  margin-right: 20px;
+  float: right;
+}
+
+.header-list > li {
+  float: left;
+  position: relative;
+  min-width: 100px;
+}
+
+.header-list > li:hover {
+  background: rgba(40,40,40,0.91);
+  border-color: #323232;
+}
+
+.profile-drop-down {
+  display: none;
+  position: absolute;
+  /*left: -1px;*/
+  font-size: 14px;
+  white-space: nowrap;
+  background: rgba(40,40,40,0.91);
+  overflow: hidden;
+  border-color: #323232;
+}
+
+li:hover .profile-drop-down {
+  display: block;
+}
+
+.profile-drop-down > li {
+  min-width: 100px;
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+}
+
+.profile-drop-down > li:hover {
+  color: silver;
+}
+
+.content {
+  background-color: #303133;
+  position: relative;
+  margin: 0 auto;
+}
+
+/*.content:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 240px;
+  width: 1px;
+  background: #ccc;
+}*/
+
+/*.content-sidebar {
+  float: left;
+  width: 200px;
+  min-height: 200px;
+  padding: 20px;
+}*/
+
+.content-main {
+  float: left;
+  width: 620px;
+  min-height: 200px;
+  padding: 20px;
+}
