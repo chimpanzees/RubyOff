@@ -26,9 +26,12 @@ QuestionsIndex = React.createClass({
 
   render: function () {
     var handleItemClick = this.handleItemClick;
+    var numQuestions = this.state.questions.length;
     return (
       <div className="question-index">
-        <h2>Questions</h2>
+        <div className="question-index-label">
+          {numQuestions}{numQuestions === 1 ? " Challenge" : " Challenges"} Returned
+        </div>
         {
           this.state.questions.map(function (question) {
             return <QuestionsIndexItem

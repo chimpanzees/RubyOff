@@ -58,6 +58,7 @@ input.sign-in-submit {
 }
 
 input.sign-in-submit:hover {
+  cursor: pointer;
   background-color: #0b0c0c;
 }
 
@@ -71,5 +72,6 @@ div.sign-up-link {
 }
 
 div.sign-up-link:hover {
+  cursor: pointer;
   color: #79a0dd;
 }
