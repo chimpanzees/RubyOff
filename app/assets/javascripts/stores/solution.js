@@ -4,7 +4,7 @@
   var _successfulPost = false;
   var CHANGE_EVENT = "change";
 
-  function resetSolution(soutions) {
+  function resetSolution(solutions) {
     _solutions = solutions.slice();
   }
 

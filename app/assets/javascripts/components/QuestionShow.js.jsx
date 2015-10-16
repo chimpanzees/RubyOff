@@ -60,7 +60,8 @@ QuestionShow = React.createClass({
 
         <SolutionForm question_id={this.state.question.id}
                       solution_default={this.state.question.solution_default}
-                      tests_default={this.state.question.tests_default}/>
+                      tests_default={this.state.question.tests_default}
+                      history={this.history}/>
         <button onClick={this.handleSkip}>Skip</button><br/>
         <button onClick={this.handleGiveUp}>Give Up</button><br/>
       </div>

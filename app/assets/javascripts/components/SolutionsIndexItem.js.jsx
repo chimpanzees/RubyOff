@@ -2,8 +2,13 @@ SolutionsIndexItem = React.createClass({
   render: function () {
     return (
       <div className="solution-index-item">
-        <div>Body: {this.props.solution.body}</div>
-        <div>by: {this.props.solution.author_id}</div> //Make show username
+        <label>Body: </label>
+        <textarea rows="6"
+                  cols="50"
+                  disabled="true"
+                  value={this.props.solution.body}></textarea>
+        <br/>
+        <div>by: {this.props.solution.author_id}</div>
         <br/>
       </div>
     );

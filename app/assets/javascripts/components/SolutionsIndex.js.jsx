@@ -4,7 +4,7 @@ function _getAllSolutions() {
 
 SolutionsIndex = React.createClass({
   getInitialState: function () {
-    return {solutions: {}};
+    return {solutions: []};
   },
 
   componentDidMount: function () {
