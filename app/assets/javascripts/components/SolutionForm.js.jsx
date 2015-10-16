@@ -12,19 +12,12 @@ SolutionForm = React.createClass({
   },
 
   componentDidMount: function () {
-    // this.setState({
-    //   questionId: this.props.questionId,
-    //   body: this.props.solution_default,
-    //   tests_default: this.props.tests_default,  // for submition
-    //   tests: this.props.tests_default,         // for editing
-    //   output: {}
-    // });
     SolutionStore.addChangeListener(this._solutionChanged);
   },
 
   componentWillReceiveProps: function (newProps) {
     this.setState({
-      questionId: newProps.questionId,
+      questionId: newProps.question_id,
       body: newProps.solution_default,
       tests_default: newProps.tests_default,  // for submition
       tests: newProps.tests_default,         // for editing
@@ -33,9 +26,12 @@ SolutionForm = React.createClass({
   },
 
   _solutionChanged: function () {
-    var output = SolutionStore.getOutput();
-    this.setState({output: output});
-    // debugger;
+    if (SolutionStore.successfulPost()) {
+      this.history.pushState(null, "/solutions/" + currentQuestion.id, {});
+    } else {
+      var output = SolutionStore.getOutput();
+      this.setState({output: output});
+    }
   },
 
   handleSubmit: function (e) {

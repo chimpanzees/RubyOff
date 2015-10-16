@@ -1,26 +1,25 @@
 (function(root) {
-  // var _solutions;
+  var _solutions = [];
   var _output;
+  var _successfulPost = false;
   var CHANGE_EVENT = "change";
 
-  // function resetSolution(soutions) {
-  //   _solutions = solutions.slice();
-  // }
+  function resetSolution(soutions) {
+    _solutions = solutions.slice();
+  }
+
+  var addSolution = function (solution) {
+    _solutions.push(solution);
+  };
 
   var SolutionStore = root.SolutionStore = $.extend({}, EventEmitter.prototype, {
-    // all: function () {
-    //   return _solutions.slice();
-    // },
+    all: function () {
+      return _solutions.slice();
+    },
 
-    // getSolutionById: function (id) {
-    //   var res = null;
-    //   _solutions.forEach(function (solution) {
-    //     if (solution.id === id) {
-    //       res = solution;
-    //     }
-    //   });
-    //   return res;
-    // },
+    successfulPost: function () {
+      return _successfulPost;
+    },
 
     getOutput: function () {
       return $.extend({}, _output);
@@ -36,20 +35,27 @@
 
     dispatcherID: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
-      //   case SolutionConstants.SOLUTIONS_RECEIVED:
-      //     resetSolution(payload.solutions);
-      //     SolutionStore.emit(CHANGE_EVENT);
-      //     break;
-      //   case SolutionConstants.SOLUTION_ADDED:
-      //     resetSolution(payload.solutions);
-      //     SolutionStore.emit(CHANGE_EVENT);
-      //     break;
+        case SolutionConstants.SOLUTIONS_RECEIVED:
+          _successfulPost = false;
+          resetSolution(payload.solutions);
+          SolutionStore.emit(CHANGE_EVENT);
+          break;
+        case SolutionConstants.SOLUTION_ADDED:
+          _successfulPost = true;
+          addSolution(payload.solution);
+          SolutionStore.emit(CHANGE_EVENT);
+          break;
+        case SolutionConstants.SUBMIT_DENIED:
+          _successfulPost = false;
+          _output = payload.results;
+          SolutionStore.emit(CHANGE_EVENT);
+          break;
       //   case SolutionConstants.SOLUTION_REMOVED:
       //     resetSolution(payload.solutions);
       //     SolutionStore.emit(CHANGE_EVENT);
       //     break;
         case SolutionConstants.TEST_RESULTS_RECEIVED:
-          // payload.result is our result!
+          _successfulPost = false;
           _output = payload.results;
           SolutionStore.emit(CHANGE_EVENT);
           break;

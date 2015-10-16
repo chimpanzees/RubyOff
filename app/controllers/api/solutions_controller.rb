@@ -3,17 +3,31 @@ class Api::SolutionsController < ApplicationController
 
   def create
     author_id = current_user.id
+    question_id = params[:questionId]
     body = params[:body]
     tests = params[:tests]
-    output = params[:output]
     results = Sandbox.runTests(body, tests)
-    fail
-    resultsHash = {}
-    results.each_with_index do |result, i|
-      resultsHash["test_#{i}"] = result
+    passing = results.all? { |result| result == {success: true} }
+    if passing
+      @solution = Solution.new({
+        author_id: author_id,
+        question_id: question_id,
+        body: body
+      })
+      if @solution.save
+        render json: {saved: true, solution: @solution}
+      else
+        fail
+        render json: {saved: false}
+      end
+    else
+      # Did not pass all tests
+      json_obj = {}
+      results.each_with_index do |result, i|
+        json_obj["test_#{i}"] = result
+      end
+      render json: json_obj
     end
-    @solution = Solution.new(solution_params)
-    render json: @solution
   end
 
   def index

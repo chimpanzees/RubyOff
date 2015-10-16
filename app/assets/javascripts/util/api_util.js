@@ -10,13 +10,13 @@ ApiUtil = {
     });
   },
 
-  trySubmit: function (body, tests) {
+  trySubmit: function (questionId, body, tests) {
     $.ajax({
       type: 'post',
       url: 'api/solutions',
-      data: {body: body, tests: tests},
-      success: function (results) {
-        ApiActions.receiveTestResults(results);
+      data: {questionId: questionId, body: body, tests: tests},
+      success: function (result) {
+        ApiActions.receiveSubmitResult(result);
       }
     });
   },
@@ -38,6 +38,17 @@ ApiUtil = {
       type: 'get',
       success: function (questions) {
         ApiActions.receiveAllQuestions(questions);
+      }
+    });
+  },
+
+  fetchSolutions: function (id) {
+    $.ajax({
+      url: 'api/solutions',
+      type: 'get',
+      data: {question_id: id},
+      success: function (solutions) {
+        ApiActions.receiveAllSolutions(solutions);
       }
     });
   }

@@ -24,5 +24,27 @@ ApiActions = {
     AppDispatcher.dispatch({
       actionType: QuestionConstants.RECEIVE_SKIP_REQUEST
     });
+  },
+
+  receiveSubmitResult: function (result) {
+    if (result.saved === true) {
+      AppDispatcher.dispatch({
+        actionType: SolutionConstants.SOLUTION_ADDED,
+        solution: result.solution
+      });
+    } else {
+      debugger
+      AppDispatcher.dispatch({
+        actionType: SolutionConstants.SUBMIT_DENIED,
+        results: result
+      });
+    }
+  },
+
+  receiveAllSolutions: function (solutions) {
+    AppDispatcher.dispatch({
+      actionType: SolutionConstants.SOLUTIONS_RECEIVED,
+      solutions: solutions
+    });
   }
 };

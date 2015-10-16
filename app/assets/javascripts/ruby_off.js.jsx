@@ -17,8 +17,8 @@ $(function(){
   var routes = (
       <Route path="/" component={App}>
         <IndexRoute component={QuestionsIndex}/>
-        <Route path="questions/:questionId" component={QuestionShow}>
-        </Route>
+        <Route path="questions/:questionId" component={QuestionShow}></Route>
+        <Route path="solutions/:questionId" component={SolutionsIndex}></Route>
       </Route>
   );
   React.render(<Router>{routes}</Router>, root);
