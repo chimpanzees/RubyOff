@@ -3,6 +3,8 @@ function _getAllSolutions() {
 }
 
 SolutionsIndex = React.createClass({
+  mixins: [ReactRouter.History],
+
   getInitialState: function () {
     return {solutions: []};
   },
@@ -20,6 +22,17 @@ SolutionsIndex = React.createClass({
     this.setState({solutions: _getAllSolutions()});
   },
 
+  handleIndex: function (event) {
+    event.preventDefault();
+    this.history.pushState(null, "/", {});
+  },
+
+  handleRedo: function (event) {
+    event.preventDefault();
+    var questionId = this.props.params.questionId;
+    this.history.pushState(null, "/questions/" + questionId, {});
+  },
+
   render: function () {
     return (
       <div className="solution-index">
@@ -29,6 +42,8 @@ SolutionsIndex = React.createClass({
             return <SolutionsIndexItem  solution={solution} key={solution.id}/>;
           })
         }
+        <button onClick={this.handleIndex}>Question Index</button><br/>
+        <button onClick={this.handleRedo}>Try Again</button><br/>
       </div>
     );
   }

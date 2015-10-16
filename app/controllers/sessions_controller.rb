@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if user
       sign_in(user)
-      redirect_to sandboxes_url
+      redirect_to :root
     else
       flash.now[:errors] = ["Invalid username/password combination"]
       render :new

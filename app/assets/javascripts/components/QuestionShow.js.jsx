@@ -39,7 +39,13 @@ QuestionShow = React.createClass({
 
   handleGiveUp: function (event) {
     event.preventDefault();
-    // TODO once solutions index is written
+    var currentQuestion = QuestionStore.currentQuestion();
+    this.history.pushState(null, "/solutions/" + currentQuestion.id, {});
+  },
+
+  handleBack: function (event) {
+    event.preventDefault();
+    this.history.pushState(null, "/", {});
   },
 
   render: function () {
@@ -64,6 +70,7 @@ QuestionShow = React.createClass({
                       history={this.history}/>
         <button onClick={this.handleSkip}>Skip</button><br/>
         <button onClick={this.handleGiveUp}>Give Up</button><br/>
+        <button onClick={this.handleBack}>Back</button><br/>
       </div>
     );
   }

@@ -18,6 +18,7 @@ class Sandbox < ActiveRecord::Base
     :>=,
     :<=,
     :==,
+    :**,
     :[],
     :singleton_method_added
   ]
@@ -54,6 +55,8 @@ class Sandbox < ActiveRecord::Base
       return {error: "TypeError", message: e.message}
     rescue ZeroDivisionError => e
       return {error: "ZeroDivisionError", message: e.message}
+    rescue SyntaxError => e
+      return {error: "SyntaxError", message: e.message}
     end
 
     return {success: result}
