@@ -7,38 +7,41 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="header">
-    <nav class="header-nav group">
-      <h1 class="header-logo">
-        <a href="#">RubyOff!</a>
-      </h1>
-
-      <ul class="header-list group">
-        <% if signed_in? %>
-          <li>
-            <a href="#"><%= current_user.username %></a>
-            <ul class="profile-drop-down">
-              <li><%= link_to "Log out", session_url, method: :delete %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li class="sign-in-link"><%= link_to "Sign In", new_session_url %></li>
-          <li class="sign-up-link"><%= link_to "Sign Up", new_user_url %></li>
-        <% end %>
-      </ul>
-
-    </nav>
-  </header>
-
-  <main class="content group">
-    <section class="content-sidebar">
-
-    </section>
-    <section class="content-main">
+  <% if !signed_in? %>
+    <div class="landing">
+      <div class="logo">
+        <%= image_tag "logo2.png" %>
+      </div>
       <%= render "layouts/errors" %>
       <%= yield %>
-    </section>
-  </main>
+    </div>
+  <% else %>
+    <header class="header">
+      <nav class="header-nav group">
+        <h1 class="header-logo">
+          <a href="#">RubyOff</a>
+        </h1>
 
+        <ul class="header-list group">
+            <li>
+              <a href="#"><%= current_user.username %></a>
+              <ul class="profile-drop-down">
+                <li><%= link_to "Log out", session_url, method: :delete %></li>
+              </ul>
+            </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content group">
+      <section class="content-sidebar">
+
+      </section>
+      <section class="content-main">
+        <%= render "layouts/errors" %>
+        <%= yield %>
+      </section>
+    </main>
+  <% end %>
 </body>
 </html>

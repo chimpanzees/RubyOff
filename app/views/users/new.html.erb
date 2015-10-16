@@ -1,17 +1,16 @@
-<h1>Sign Up</h1>
-
 <form class="new-user" action="<%= users_url %>" method="post">
   <%= auth_token_input %>
 
-  <label>
+  <label class="username-label">
     Username
-    <input type="text" name="user[username]" value="">
+    <input class="username-input" type="text" name="user[username]" value="">
   </label>
 
-  <label>
+  <label class="password-label">
     Password
-    <input type="password" name="user[password]" value="">
+    <input class="password-input" type="password" name="user[password]" value="">
   </label>
 
-  <input type="submit" value="Sign Up">
+  <input class="sign-up-submit" type="submit" value="Sign Up">
 </form>
+<div class="sign-in-link"><%= link_to "Sign In", new_session_url %></div>
