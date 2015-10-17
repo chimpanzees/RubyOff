@@ -19,4 +19,6 @@
 //= require components
 //= require flux
 //= require eventemitter
+//= require codemirror
+//= require standalone-react-codemirror
 //= require_tree .

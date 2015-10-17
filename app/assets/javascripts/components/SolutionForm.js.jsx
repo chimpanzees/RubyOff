@@ -71,8 +71,10 @@ SolutionForm = React.createClass({
       }
     }.bind(this));
 
+    var CodeMirror = React.createFactory(CodeMirrorEditor);
+
     return (
-      <div>
+      <div className="solution-form">
         <form onSubmit={this.handleSubmit}>
           <label>Your Solution: </label>
           <textarea className="solution-form-body"
@@ -85,8 +87,20 @@ SolutionForm = React.createClass({
                     valueLink={this.linkState('tests')}
                     rows="6"
                     cols="50"></textarea>
+          {CodeMirror({
+            style: {border: '1px solid black'},
+            textAreaClassName: ['form-control'],
+            textAreaStyle: {minHeight: '100px'},
+            value: this.state.body,
+            mode: 'javascript',
+            theme: 'solarized',
+            lineNumbers: true,
+            onChange: function (e) {
+              this.setState({body: e.target.value});
+            }.bind(this)
+            // https://github.com/ForbesLindesay/react-code-mirror/blob/master/example/standalone/app.js
+          })}
           <br/>
-
           <button onClick={this.handleRunTests}>Run Tests</button>
           <button onClick={this.handleSubmit}>Submit</button>
         </form>
