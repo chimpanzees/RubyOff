@@ -1,3 +1,46 @@
 // Place all the styles related to the Solutions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+input.run-tests-button {
+  float: right;
+  padding: 9px 10px 12px;
+  margin: 15px 15px 15px 0px;;
+  background-color: #79a0dd;
+  border-radius: 4px;
+  display: inline;
+  color: #131414;
+  height: 15px;
+  width: 75px;
+  text-align: center;
+  transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.run-tests-button:hover {
+  cursor: pointer;
+  background-color: #8daee2;
+}
+
+input.submit-button {
+  float: right;
+  padding: 9px 10px 12px;
+  margin: 15px 15px 15px 0px;;
+  background-color: #79a0dd;
+  border-radius: 4px;
+  display: inline;
+  color: #131414;
+  height: 15px;
+  width: 65px;
+  text-align: center;
+  transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.submit-button:hover {
+  cursor: pointer;
+  background-color: #8daee2;
+}
+
+ul.solution-form-results {
+  float: left;
+  height: 50%;
+  width: 30%;
+}

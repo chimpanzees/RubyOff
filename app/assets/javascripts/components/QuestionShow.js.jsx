@@ -56,27 +56,40 @@ QuestionShow = React.createClass({
 
     return (
       <div className="question-show">
-        <div className="question-show-title">
-          Title: {this.state.question.title}
-        </div><br/>
+        <div className="question-show-information">
+          <div className="question-show-title">
+            Title: {this.state.question.title}
+          </div>
 
-        <div className="question-show-author">
-          By: {author.username}
-        </div><br/>
+          <div className="question-show-author">
+            By: {author.username}
+          </div>
 
-        <div className="question-show-body">
-          Question: {this.state.question.question}
-        </div><br/>
+          <div className="question-show-body">
+            Question: {this.state.question.question}
+          </div>
+        </div>
 
-        <SolutionForm
-          question_id={question_id}
-          solution_default={solution_default}
-          tests_default={tests_default}
-          history={this.history}
-        />
-        <button onClick={this.handleSkip}>Skip</button><br/>
-        <button onClick={this.handleGiveUp}>Give Up</button><br/>
-        <button onClick={this.handleBack}>Back</button><br/>
+        <div className="question-show-code">
+          <SolutionForm
+            question_id={question_id}
+            solution_default={solution_default}
+            tests_default={tests_default}
+            history={this.history}
+          />
+          <input className="skip-button"
+                 type="submit"
+                 onClick={this.handleSkip}
+                 value="Skip"/>
+          <input className="give-up-button"
+                 type="submit"
+                 onClick={this.handleGiveUp}
+                 value="Give Up"/>
+          <input className="back-button"
+                 type="submit"
+                 onClick={this.handleBack}
+                 value="Back"/>
+        </div>
       </div>
     );
   }

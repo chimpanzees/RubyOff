@@ -99,8 +99,14 @@ SolutionForm = React.createClass({
             value={this.state.tests}
             onChange={this.updateTests}
             options={options}/>
-          <button onClick={this.handleRunTests}>Run Tests</button>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <input className="run-tests-button"
+                 type="submit"
+                 onClick={this.handleRunTests}
+                 value="Run Tests"/>
+          <input className="submit-button"
+                 type="submit"
+                 onClick={this.handleSubmit}
+                 value="Submit"/>
         </form>
         <ul className="solution-form-results">{ results }</ul>
       </div>

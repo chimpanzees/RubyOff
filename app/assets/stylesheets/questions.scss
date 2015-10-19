@@ -29,3 +29,74 @@ div.question-index-item-title:hover {
   color: #79a0dd;
   cursor: pointer;
 }
+
+div.question-show-information {
+  width: 30%;
+  height: 50%;
+  display: block;
+  float: left;
+}
+
+div.question-show-code {
+  width: 70%;
+  height: 100%;
+  display: block;
+  float: right;
+}
+
+input.skip-button {
+  padding: 9px 10px 12px;
+  margin: 15px 15px 15px 0px;;
+  background-color: #202123;
+  border-radius: 4px;
+  display: inline;
+  color: #79a0dd;
+  height: 15px;
+  width: 45px;
+  text-align: center;
+  transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.skip-button:hover {
+  cursor: pointer;
+  background-color: #0b0c0c;
+  color: #a2bde7;
+}
+
+input.give-up-button {
+  padding: 9px 10px 12px;
+  margin: 15px 15px 15px 0px;;
+  background-color: #202123;
+  border-radius: 4px;
+  display: inline;
+  color: #79a0dd;
+  height: 15px;
+  width: 65px;
+  text-align: center;
+  transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.give-up-button:hover {
+  cursor: pointer;
+  background-color: #0b0c0c;
+  color: #a2bde7;
+}
+
+input.back-button {
+  padding: 9px 10px 12px;
+  margin: 15px 15px 15px 0px;;
+  background-color: #202123;
+  border-radius: 4px;
+  display: inline;
+  color: #79a0dd;
+  height: 15px;
+  width: 45px;
+  text-align: center;
+  transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.back-button:hover {
+  cursor: pointer;
+  background-color: #0b0c0c;
+  color: #a2bde7;
+}

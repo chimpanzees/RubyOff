@@ -1,5 +1,5 @@
 $(function(){
-  var root = document.getElementById('content');
+  var root = document.getElementById('main-app-content');
   var RouteHandler = ReactRouter.RouteHandler;
   var Router = ReactRouter.Router;
   var Route = ReactRouter.Route;
@@ -7,7 +7,7 @@ $(function(){
   var App = React.createClass({
     render: function(){
       return (
-          <div class="app">
+          <div className="app">
             {this.props.children}
           </div>
       );
