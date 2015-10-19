@@ -108,7 +108,7 @@ h1 h2 {
 }
 
 .header-logo {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(40,40,40,1);
   color: #fff;
   float: left;
   margin-left: 20px;
@@ -133,7 +133,6 @@ h1 h2 {
 
 .header-list > li:hover {
   background: rgba(40,40,40,1);
-  border-color: #323232;
 }
 
 .profile-drop-down {

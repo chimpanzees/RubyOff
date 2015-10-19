@@ -58,7 +58,7 @@ QuestionShow = React.createClass({
       <div className="question-show">
         <div className="question-show-information">
           <div className="question-show-title">
-            Title: {this.state.question.title}
+            {this.state.question.title}
           </div>
 
           <div className="question-show-author">
@@ -66,7 +66,7 @@ QuestionShow = React.createClass({
           </div>
 
           <div className="question-show-body">
-            Question: {this.state.question.question}
+            Challenge: {this.state.question.question}
           </div>
         </div>
 
