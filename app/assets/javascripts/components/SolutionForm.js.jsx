@@ -39,19 +39,23 @@ SolutionForm = React.createClass({
     ApiUtil.trySubmit(
       this.state.questionId,
       this.state.body,
-      this.state.tests
+      this.state.tests_default
     );
     this.setState({output: {running: "Submitting"}});
   },
 
   handleRunTests: function (e) {
     e.preventDefault();
-    ApiUtil.runTests(this.state.body, this.state.tests_default);
+    ApiUtil.runTests(this.state.body, this.state.tests);
     this.setState({output: {running: "Running tests"}});
   },
 
   updateBody: function (newBody) {
     this.setState({body: newBody});
+  },
+
+  updateTests: function (newTests) {
+    this.setState({tests: newTests});
   },
 
   render: function () {
@@ -90,7 +94,11 @@ SolutionForm = React.createClass({
             value={this.state.body}
             onChange={this.updateBody}
             options={options}/>
-          <br/>
+          <label>Tests: </label>
+          <CodeMirror
+            value={this.state.tests}
+            onChange={this.updateTests}
+            options={options}/>
           <button onClick={this.handleRunTests}>Run Tests</button>
           <button onClick={this.handleSubmit}>Submit</button>
         </form>
@@ -99,13 +107,3 @@ SolutionForm = React.createClass({
     );
   }
 });
-          // <CodeMirror
-          //   value={this.state.body}
-          //   onChange={this.updateBody}
-          //   options={options}/>
-
-// <label>Your Test Cases</label>
-// <textarea className="solution-form-tests"
-//           valueLink={this.linkState('tests')}
-//           rows="6"
-//           cols="50"></textarea>

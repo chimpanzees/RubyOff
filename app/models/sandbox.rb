@@ -26,7 +26,7 @@ class Sandbox < ActiveRecord::Base
   def self.runTests(solutionString, testString)
     tests = self.cleanTestString(testString)
     result = tests.map do |t|
-      self.runInSandbox(solutionString + " " + t)
+      self.runInSandbox(solutionString + "\n" + t)
     end
   end
 

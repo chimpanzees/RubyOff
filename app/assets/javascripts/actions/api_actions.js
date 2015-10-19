@@ -33,7 +33,6 @@ ApiActions = {
         solution: result.solution
       });
     } else {
-      debugger
       AppDispatcher.dispatch({
         actionType: SolutionConstants.SUBMIT_DENIED,
         results: result
