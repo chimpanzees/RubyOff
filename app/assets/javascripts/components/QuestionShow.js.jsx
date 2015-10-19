@@ -2,7 +2,7 @@ QuestionShow = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function () {
-    return {question: {}};
+    return { question: {} };
   },
 
   componentDidMount: function () {
@@ -50,6 +50,10 @@ QuestionShow = React.createClass({
 
   render: function () {
     var author = this.state.question.author || {}
+    var question_id = this.state.question.id || -1
+    var solution_default = this.state.question.solution_default || ""
+    var tests_default = this.state.question.tests_default || ""
+
     return (
       <div className="question-show">
         <div className="question-show-title">
@@ -64,10 +68,12 @@ QuestionShow = React.createClass({
           Question: {this.state.question.question}
         </div><br/>
 
-        <SolutionForm question_id={this.state.question.id}
-                      solution_default={this.state.question.solution_default}
-                      tests_default={this.state.question.tests_default}
-                      history={this.history}/>
+        <SolutionForm
+          question_id={question_id}
+          solution_default={solution_default}
+          tests_default={tests_default}
+          history={this.history}
+        />
         <button onClick={this.handleSkip}>Skip</button><br/>
         <button onClick={this.handleGiveUp}>Give Up</button><br/>
         <button onClick={this.handleBack}>Back</button><br/>

@@ -50,14 +50,19 @@ SolutionForm = React.createClass({
     this.setState({output: {running: "Running tests"}});
   },
 
+  updateBody: function (newBody) {
+    this.setState({body: newBody});
+  },
+
   render: function () {
     var results = [];
     Object.keys(this.state.output).map(function (result) {
       if (typeof this.state.output[result].success !== 'undefined') {
         // Successful output
         var out = this.state.output[result].success;
-        var aboutToPush = <li className="success" key={result}>{out.toString()}</li>;
-        results.push(aboutToPush);
+        results.push(
+          <li className="success" key={result}>{out.toString()}</li>
+        );
       } else if (typeof this.state.output[result].running !== 'undefined') {
         // Running tests
         results.push(<li className="running">Running tests...</li>);
@@ -71,35 +76,20 @@ SolutionForm = React.createClass({
       }
     }.bind(this));
 
-    var CodeMirror = React.createFactory(CodeMirrorEditor);
+    var options = {
+      lineNumbers: true,
+      mode: "ruby",
+      theme: "lesser-dark"
+    };
 
     return (
       <div className="solution-form">
         <form onSubmit={this.handleSubmit}>
           <label>Your Solution: </label>
-          <textarea className="solution-form-body"
-                    valueLink={this.linkState('body')}
-                    rows="6"
-                    cols="50"></textarea>
-          <br/>
-          <label>Your Test Cases</label>
-          <textarea className="solution-form-tests"
-                    valueLink={this.linkState('tests')}
-                    rows="6"
-                    cols="50"></textarea>
-          {CodeMirror({
-            style: {border: '1px solid black'},
-            textAreaClassName: ['form-control'],
-            textAreaStyle: {minHeight: '100px'},
-            value: this.state.body,
-            mode: 'javascript',
-            theme: 'solarized',
-            lineNumbers: true,
-            onChange: function (e) {
-              this.setState({body: e.target.value});
-            }.bind(this)
-            // https://github.com/ForbesLindesay/react-code-mirror/blob/master/example/standalone/app.js
-          })}
+          <CodeMirror
+            value={this.state.body}
+            onChange={this.updateBody}
+            options={options}/>
           <br/>
           <button onClick={this.handleRunTests}>Run Tests</button>
           <button onClick={this.handleSubmit}>Submit</button>
@@ -109,3 +99,13 @@ SolutionForm = React.createClass({
     );
   }
 });
+          // <CodeMirror
+          //   value={this.state.body}
+          //   onChange={this.updateBody}
+          //   options={options}/>
+
+// <label>Your Test Cases</label>
+// <textarea className="solution-form-tests"
+//           valueLink={this.linkState('tests')}
+//           rows="6"
+//           cols="50"></textarea>
