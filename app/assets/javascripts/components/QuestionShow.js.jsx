@@ -66,7 +66,7 @@ QuestionShow = React.createClass({
           </div>
 
           <div className="question-show-body">
-            Challenge: {this.state.question.question}
+            {this.state.question.question}
           </div>
         </div>
 

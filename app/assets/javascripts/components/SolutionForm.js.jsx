@@ -89,7 +89,7 @@ SolutionForm = React.createClass({
     var options = {
       lineNumbers: true,
       mode: "ruby",
-      theme: "lesser-dark"
+      theme: "twilight"
     };
 
     return (
