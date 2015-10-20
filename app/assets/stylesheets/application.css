@@ -195,6 +195,7 @@ li:hover .profile-drop-down {
 .footer {
   margin: 0 auto;
   clear: both;
+  position: relative;
   display: block;
   bottom: 0;
   font-size: 14px;
