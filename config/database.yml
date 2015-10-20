@@ -15,7 +15,3 @@ development:
 test:
   <<: *default
   database: rubyoff_test
-
-production:
-  <<: *default
-  database: rubyoff_production
