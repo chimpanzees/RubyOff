@@ -91,3 +91,76 @@ li.error {
   margin-bottom: 15px;
   border: 2px solid red;
 }
+
+div.solutions-index {
+  width: 97%;
+  font-size: 20px;
+  margin: 15px;
+  min-height: 1px;
+  position: relative;
+  float: left;
+}
+
+div.solutions-index-header {
+  width: 97%;
+  padding: 15px;
+  display: block;
+  background-color: #141414;
+}
+
+div.solutions-index-title {
+  padding: 15px;
+  display: inline;
+}
+
+div.solutions-index-label {
+  padding: 15px;
+  display: inline;
+}
+
+input.question-index-button {
+  font-size: 18px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 7px 12px;
+  margin: -7px 0px 0px 14px;
+  display: inline;
+  float: right;
+  background-color: #79a0dd;
+  color: #131414;
+  transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.question-index-button:hover {
+  background-color: #8daee2;
+}
+
+input.redo-button {
+  padding: 7px 12px;
+  margin-top: -7px;
+  font-size: 18px;
+  border-radius: 4px;
+  text-align: center;
+  display: inline;
+  float: right;
+  background-color: #79a0dd;
+  color: #131414;
+  transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.redo-button:hover {
+  background-color: #8daee2;
+}
+
+div.solutions-index-list {
+  margin-top: 20px;
+}
+
+div.solutions-index-item {
+}
+
+div.solutions-index-item-author {
+  padding: 10px;
+  background-color: #262729;
+  display: block;
+}

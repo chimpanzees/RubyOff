@@ -112,7 +112,7 @@ h1 h2 {
   background-color: rgba(40,40,40,1);
   color: #fff;
   float: left;
-  margin-left: 20px;
+  margin-left: 15px;
   transition: color 0.2s ease-in-out;
 }
 
@@ -121,7 +121,7 @@ h1 h2 {
 }
 
 .header-list {
-  margin-right: 20px;
+  margin-right: 15px;
   float: right;
 }
 
@@ -165,24 +165,6 @@ li:hover .profile-drop-down {
   position: relative;
   margin: 0 auto;
 }
-
-/*.content:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 240px;
-  width: 1px;
-  background: #ccc;
-}*/
-
-/*.content-sidebar {
-  float: left;
-  width: 200px;
-  min-height: 200px;
-  padding: 20px;
-}*/
 
 .content-main {
   display: block;

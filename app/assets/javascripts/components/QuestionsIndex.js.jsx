@@ -29,17 +29,21 @@ QuestionsIndex = React.createClass({
     var numQuestions = this.state.questions.length;
     return (
       <div className="question-index">
-        <div className="question-index-label">
-          {numQuestions}{numQuestions === 1 ? " Challenge" : " Challenges"} Returned
+        <div className="question-index-header">
+          <div className="question-index-label">
+            {numQuestions}{numQuestions === 1 ? " Challenge" : " Challenges"} Found
+          </div>
         </div>
-        {
-          this.state.questions.map(function (question) {
-            return <QuestionsIndexItem
-              onClick={this.handleItemClick.bind(this, question)}
-              question={question}
-              key={question.id}/>;
-          }.bind(this))
-        }
+        <div className="question-index-list">
+          {
+            this.state.questions.map(function (question) {
+              return <QuestionsIndexItem
+                onClick={this.handleItemClick.bind(this, question)}
+                question={question}
+                key={question.id}/>;
+            }.bind(this))
+          }
+        </div>
       </div>
     );
   }

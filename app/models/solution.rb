@@ -18,11 +18,18 @@ class Solution < ActiveRecord::Base
   belongs_to(
     :author,
     class_name: "User",
-    foreign_key: :author_id,
-    primary_key: :id
+    primary_key: :id,
+    foreign_key: :author_id
   )
 
   def self.all_for_question(id)
     self.where(question_id: id)
+        .collect do |sol|
+          {
+            "solution": sol,
+            "username": sol.author.username,
+            "question_title": sol.question.title
+          }
+        end
   end
 end

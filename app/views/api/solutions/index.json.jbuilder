@@ -1,1 +1,1 @@
-json.array! @solutions, :author_id, :question_id, :body
+json.array! @solutions, :author_id, :author, :question_id, :body

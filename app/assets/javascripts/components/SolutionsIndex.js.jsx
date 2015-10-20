@@ -34,16 +34,39 @@ SolutionsIndex = React.createClass({
   },
 
   render: function () {
+    var numSolutions = this.state.solutions.length;
+    var question_title = "";
+    if (numSolutions > 0) {
+      question_title = this.state.solutions[0].question_title;
+    }
+
     return (
-      <div className="solution-index">
-        <h2>Solutions</h2>
-        {
-          this.state.solutions.map(function (solution) {
-            return <SolutionsIndexItem  solution={solution} key={solution.id}/>;
-          })
-        }
-        <button onClick={this.handleIndex}>Question Index</button><br/>
-        <button onClick={this.handleRedo}>Try Again</button><br/>
+      <div className="solutions-index">
+        <div className="solutions-index-header">
+          <div className="solutions-index-title">
+            {question_title}
+          </div>
+          <div className="solutions-index-label">
+            {numSolutions}{numSolutions === 1 ? " Solution" : " Solutions"} Returned
+          </div>
+          <input className="question-index-button"
+                 type="submit"
+                 onClick={this.handleIndex}
+                 value="Question Index"/>
+          <input className="redo-button"
+                 type="submit"
+                 onClick={this.handleRedo}
+                 value="Try Again"/>
+        </div>
+        <div className="solutions-index-list">
+          {
+            this.state.solutions.map(function (solution) {
+              return <SolutionsIndexItem
+                        dataObject={solution}
+                        key={solution.solution.id}/>;
+            })
+          }
+        </div>
       </div>
     );
   }

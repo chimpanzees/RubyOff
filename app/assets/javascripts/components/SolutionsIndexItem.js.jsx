@@ -1,14 +1,20 @@
 SolutionsIndexItem = React.createClass({
   render: function () {
+    var options = {
+      lineNumbers: true,
+      mode: "ruby",
+      theme: "twilight",
+      readOnly: true
+    };
+
     return (
-      <div className="solution-index-item">
-        <label>Body: </label>
-        <textarea rows="6"
-                  cols="50"
-                  disabled="true"
-                  value={this.props.solution.body}></textarea>
-        <br/>
-        <div>by: {this.props.solution.author_id}</div>
+      <div className="solutions-index-item">
+        <div className="solutions-index-item-author">
+          Author: {this.props.dataObject.username}
+        </div>
+        <ReactCodeMirror
+          value={this.props.dataObject.solution.body}
+          options={options}/>
         <br/>
       </div>
     );

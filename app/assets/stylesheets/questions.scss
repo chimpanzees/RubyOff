@@ -3,20 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div.question-index {
-  padding: 0 15px;
+  width: 97%;
+  font-size: 20px;
+  margin: 15px;
   min-height: 1px;
   position: relative;
   float: left;
 }
 
+div.question-index-header {
+  width: 97%;
+  padding: 15px;
+  display: block;
+  background-color: #141414;
+}
+
 div.question-index-label {
-  margin-left: 5px;
-  margin-bottom: 16px;
+  padding: 15px;
+  display: inline;
+}
+
+div.question-index-list {
+  margin-top: 20px;
 }
 
 div.question-index-item {
   color: #efefef;
-  margin-bottom: 15px;
+  background-color: rgba(40,40,40,1);
+  padding: 15px;
+  margin-top: 15px;
   font-size: 18px;
 }
 
@@ -96,7 +111,7 @@ input.give-up-button {
 
 input.give-up-button:hover {
   cursor: pointer;
-  background-color: #0b0c0c;
+  background-color: #141414;
   color: #a2bde7;
 }
 
@@ -115,6 +130,6 @@ input.back-button {
 
 input.back-button:hover {
   cursor: pointer;
-  background-color: #0b0c0c;
+  background-color: #141414;
   color: #a2bde7;
 }
