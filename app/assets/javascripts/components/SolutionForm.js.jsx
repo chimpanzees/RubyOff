@@ -96,12 +96,12 @@ SolutionForm = React.createClass({
       <div className="solution-form">
         <form onSubmit={this.handleSubmit}>
           <label className="solution-form-solution">Your Solution: </label>
-          <CodeMirror
+          <ReactCodeMirror
             value={this.state.body}
             onChange={this.updateBody}
             options={options}/>
           <label className="solution-form-tests">Tests: </label>
-          <CodeMirror
+          <ReactCodeMirror
             value={this.state.tests}
             onChange={this.updateTests}
             options={options}/>
