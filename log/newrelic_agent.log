@@ -17,3 +17,21 @@
 [2015-10-20 15:04:54 -0700 Patrick-Sandquists-MacBook-Pro.local (20312)] INFO : Installing Rails 4 view instrumentation
 [2015-10-20 15:04:54 -0700 Patrick-Sandquists-MacBook-Pro.local (20312)] INFO : Installing Rails 4 Error instrumentation
 [2015-10-20 15:04:54 -0700 Patrick-Sandquists-MacBook-Pro.local (20312)] INFO : Finished instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Starting the New Relic agent in "development" environment.
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] WARN : No configuration file found. Working directory = /Users/Patrick/Dropbox/App Academy/RubyOff
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] WARN : Looked in these locations (based on defaults): /Users/Patrick/Dropbox/App Academy/RubyOff/config/newrelic.yml, /Users/Patrick/Dropbox/App Academy/RubyOff/newrelic.yml, /Users/Patrick/Dropbox/App Academy/RubyOff/config/newrelic.yml, /Users/Patrick/Dropbox/App Academy/RubyOff/newrelic.yml, /Users/Patrick/.newrelic/newrelic.yml, /Users/Patrick/newrelic.yml
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Environment: development
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : No known dispatcher detected.
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Application: development
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing ActiveJob instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing ActiveRecord 4 instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing Net instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing deferred Rack instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing Rack::Builder middleware instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing Rails 3+ middleware instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing Rails 4 Controller instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing Rails 4 view instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Installing Rails 4 Error instrumentation
+[2015-10-20 15:19:08 -0700 Patrick-Sandquists-MacBook-Pro.local (21036)] INFO : Finished instrumentation
