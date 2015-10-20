@@ -26,9 +26,9 @@ class Solution < ActiveRecord::Base
     self.where(question_id: id)
         .collect do |sol|
           {
-            "solution": sol,
-            "username": sol.author.username,
-            "question_title": sol.question.title
+            "solution" => sol,
+            "username" => sol.author.username,
+            "question_title" => sol.question.title
           }
         end
   end
