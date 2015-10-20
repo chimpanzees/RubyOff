@@ -1,6 +1,19 @@
 // Place all the styles related to the Solutions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+label.solution-form-solution {
+  padding: 10px;
+  background-color: rgba(38,39,41,1);
+  display: block;
+}
+
+label.solution-form-tests {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(38,39,41,1);
+  display: block;
+}
+
 input.run-tests-button {
   float: right;
   padding: 9px 10px 12px;
@@ -40,7 +53,40 @@ input.submit-button:hover {
 }
 
 ul.solution-form-results {
+  position: absolute;
+  margin-left: -30%;
+  margin-top: -340px;
   float: left;
   height: 50%;
-  width: 30%;
+  width: 28%;
+}
+
+li.success-true {
+  display: block;
+  background-color: rgba(38,39,41,1);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #5f8120;
+}
+
+li.success-false {
+  display: block;
+  background-color: rgba(38,39,41,1);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+li.running {
+  display: block;
+  background-color: rgba(38,39,41,1);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+li.error {
+  display: block;
+  background-color: rgba(38,39,41,1);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid red;
 }

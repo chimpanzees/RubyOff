@@ -64,9 +64,15 @@ SolutionForm = React.createClass({
       if (typeof this.state.output[result].success !== 'undefined') {
         // Successful output
         var out = this.state.output[result].success;
-        results.push(
-          <li className="success" key={result}>{out.toString()}</li>
-        );
+        if (out) {
+          results.push(
+            <li className="success-true" key={result}>{out.toString()}</li>
+          );
+        } else {
+          results.push(
+            <li className="success-false" key={result}>{out.toString()}</li>
+          );
+        }
       } else if (typeof this.state.output[result].running !== 'undefined') {
         // Running tests
         results.push(<li className="running">Running tests...</li>);
@@ -89,12 +95,12 @@ SolutionForm = React.createClass({
     return (
       <div className="solution-form">
         <form onSubmit={this.handleSubmit}>
-          <label>Your Solution: </label>
+          <label className="solution-form-solution">Your Solution: </label>
           <CodeMirror
             value={this.state.body}
             onChange={this.updateBody}
             options={options}/>
-          <label>Tests: </label>
+          <label className="solution-form-tests">Tests: </label>
           <CodeMirror
             value={this.state.tests}
             onChange={this.updateTests}

@@ -31,15 +31,18 @@ div.question-index-item-title:hover {
 }
 
 div.question-show-information {
+  margin-left: 20px;
   width: 28%;
-  height: 50%;
+  height: 340px;
   display: block;
   float: left;
+  overflow-y: auto;
   background-color: rgba(38,39,41,1);
 }
 
 div.question-show-code {
-  width: 70%;
+  margin-right: 20px;
+  width: 67%;
   height: 100%;
   display: block;
   float: right;
