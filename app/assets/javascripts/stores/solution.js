@@ -50,10 +50,6 @@
           _output = payload.results;
           SolutionStore.emit(CHANGE_EVENT);
           break;
-      //   case SolutionConstants.SOLUTION_REMOVED:
-      //     resetSolution(payload.solutions);
-      //     SolutionStore.emit(CHANGE_EVENT);
-      //     break;
         case SolutionConstants.TEST_RESULTS_RECEIVED:
           _successfulPost = false;
           _output = payload.results;

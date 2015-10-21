@@ -73,9 +73,9 @@ SolutionForm = React.createClass({
             <li className="success-false" key={result}>{out.toString()}</li>
           );
         }
-      } else if (typeof this.state.output[result].running !== 'undefined') {
+      } else if (this.state.output[result] === 'Running tests') {
         // Running tests
-        results.push(<li className="running">Running tests...</li>);
+        results.push(<li className="running" key={result}>Running tests...</li>);
       } else {
         // Error of some type
         var errorType = this.state.output[result].error;

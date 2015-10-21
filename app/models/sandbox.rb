@@ -98,7 +98,7 @@ class Sandbox < ActiveRecord::Base
     priv.allow_singleton_methods
 
     begin
-      result = s.run(priv, string)
+      result = s.run :code => string, :privileges => priv, :timeout => 3
     rescue SecurityError => e
       return {error: "SecurityError", message: e.message}
     rescue ArgumentError => e
@@ -115,6 +115,8 @@ class Sandbox < ActiveRecord::Base
       return {error: "ZeroDivisionError", message: e.message}
     rescue SyntaxError => e
       return {error: "SyntaxError", message: e.message}
+    rescue Shikashi::Timeout::Error => e
+      return {error: "TimeoutError", message: "execution time limit exceeded."}
     end
 
     return {success: result}
