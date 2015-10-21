@@ -6,7 +6,7 @@ SolutionForm = React.createClass({
       questionId: -1,
       body: "loading",
       tests_default: "loading",  // for submition
-      tests: "loading",         // for editing
+      tests: "loading",          // for editing
       output: {}
     };
   },
@@ -20,7 +20,7 @@ SolutionForm = React.createClass({
       questionId: newProps.question_id,
       body: newProps.solution_default,
       tests_default: newProps.tests_default,  // for submition
-      tests: newProps.tests_default,         // for editing
+      tests: newProps.tests_default,          // for editing
       output: {}
     });
   },
@@ -73,7 +73,7 @@ SolutionForm = React.createClass({
             <li className="success-false" key={result}>{out.toString()}</li>
           );
         }
-      } else if (this.state.output[result] === 'Running tests') {
+      } else if (result === 'running') {
         // Running tests
         results.push(<li className="running" key={result}>Running tests...</li>);
       } else {
