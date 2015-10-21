@@ -38,7 +38,7 @@ QuestionsIndex = React.createClass({
           {
             this.state.questions.map(function (question) {
               return <QuestionsIndexItem
-                onClick={this.handleItemClick.bind(this, question)}
+                onTouch={this.handleItemClick.bind(this, question)}
                 question={question}
                 key={question.id}/>;
             }.bind(this))
