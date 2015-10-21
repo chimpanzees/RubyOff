@@ -126,9 +126,9 @@ h1 h2 {
 }
 
 .header-list > li {
-  float: left;
+  float: right;
   position: relative;
-  min-width: 100px;
+  min-width: inherit;
   text-align: center;
 }
 
@@ -143,7 +143,8 @@ h1 h2 {
   white-space: nowrap;
   background: rgba(40,40,40,1);
   overflow: hidden;
-  border-color: #323232;
+  border-top: 1px solid rgb(105, 105, 105);
+  min-width: 100%;
 }
 
 li:hover .profile-drop-down {
@@ -151,7 +152,6 @@ li:hover .profile-drop-down {
 }
 
 .profile-drop-down > li {
-  min-width: 100px;
   color: #fff;
   transition: color 0.2s ease-in-out;
 }
