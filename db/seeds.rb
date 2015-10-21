@@ -36,7 +36,7 @@ powersOfTwo = Question.create!(
   question: "Write a class method that determines if given number is a power of two. A power of two means a number of the form 2^n where n is an integer, i.e. the result of exponentiation with number two as the base and integer n as the exponent. I.e. 1024 is a power of two: it 2^10.",
   author_id: nicole.id,
   solution_default: 'def self.power_of_two?(x)
-  # code
+  # code goes here
 end',
   tests_default: 'self.power_of_two?(2) == true
 self.power_of_two?(4096) == true
