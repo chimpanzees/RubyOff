@@ -31,7 +31,7 @@ end',
 self.triple(1) == 3
 self.triple(6) == 18'
 )
-question3 = Question.create!(
+powersOfTwo = Question.create!(
   title: "Powers of Two",
   question: "Write a class method that determines if given number is a power of two. A power of two means a number of the form 2^n where n is an integer, i.e. the result of exponentiation with number two as the base and integer n as the exponent. I.e. 1024 is a power of two: it 2^10.",
   author_id: nicole.id,
@@ -43,7 +43,7 @@ self.power_of_two?(4096) == true
 self.power_of_two?(5) == false
 '
 )
-question4 = Question.create!(
+isSquare = Question.create!(
   title: "You're a Square!",
   question: "Given an integral number, determine if it's a square number. In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.",
   author_id: patrick.id,
@@ -69,4 +69,72 @@ solution2 = Solution.create!(
 end',
   author_id: minh.id,
   question_id: question2.id
+)
+solution3 = Solution.create!(
+  body: 'def self.is_square?(x)
+  x < 0 ? false : Math.sqrt(x) % 1 == 0
+end',
+  author_id: minh.id,
+  question_id: isSquare.id
+)
+solution4 = Solution.create!(
+  body: 'def self.is_square?(x)
+  x >= 0 && Math.sqrt(x).floor ** 2 == x
+end',
+  author_id: nicole.id,
+  question_id: isSquare.id
+)
+solution5 = Solution.create!(
+  body: 'def self.is_square?(x)
+  return false if x < 0
+  sqr = x**0.5
+  sqr == sqr.to_i
+end',
+  author_id: nathan.id,
+  question_id: isSquare.id
+)
+solution6 = Solution.create!(
+  body: 'def self.is_square?(x)
+  (0..x).each do |i|
+    if i ** 2 == x then
+      return true
+    elsif i ** 2 > x
+      return false
+    end
+  end
+  false
+end',
+  author_id: patrick.id,
+  question_id: isSquare.id
+)
+solution7 = Solution.create!(
+  body: 'def self.power_of_two?(x)
+  Math.log2(x) % 1 == 0
+end',
+  author_id: patrick.id,
+  question_id: powersOfTwo.id
+)
+solution8 = Solution.create!(
+  body: 'def self.power_of_two?(x)
+  x.to_s(2).scan(/1/).length == 1
+end',
+  author_id: minh.id,
+  question_id: powersOfTwo.id
+)
+solution9 = Solution.create!(
+  body: 'def self.power_of_two?(x)
+  while x%2==0 do
+    x=x/2
+  end
+  x==1
+end',
+  author_id: nathan.id,
+  question_id: powersOfTwo.id
+)
+solution10 = Solution.create!(
+  body: 'def self.power_of_two?(x)
+  x == 1 || (x % 2).zero? && power_of_two?(x / 2)
+end',
+  author_id: nicole.id,
+  question_id: powersOfTwo.id
 )

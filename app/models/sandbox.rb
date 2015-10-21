@@ -45,7 +45,35 @@ class Sandbox < ActiveRecord::Base
     :collect,
     :to_f,
     :to_i,
+    :acos,
+    :acosh,
+    :asin,
+    :asinh,
+    :atan,
+    :atan2,
+    :atanh,
+    :cbrt,
+    :cos,
+    :cosh,
+    :erf,
+    :erfc,
+    :exp,
+    :frexp,
+    :gamma,
+    :hypot,
+    :ldexp,
+    :lgamma,
+    :log,
+    :log10,
+    :log2,
+    :sin,
+    :sinh,
+    :sqrt,
+    :tan,
+    :tanh,
+    :floor,
     :include,
+    :new,
     :singleton_method_added
   ]
 
@@ -64,8 +92,10 @@ class Sandbox < ActiveRecord::Base
     string = "include Math\n" + string # lets users use the Math module
     s = Shikashi::Sandbox.new
     priv = Shikashi::Privileges.new
-    priv.allow_const_read "Math"
+    priv.allow_const_read "Math" # lets users use the Math module
     ALLOWED_METHODS.each { |method| priv.allow_method(method) }
+    priv.allow_class_definitions
+    priv.allow_singleton_methods
 
     begin
       result = s.run(priv, string)
