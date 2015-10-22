@@ -176,10 +176,49 @@ div.solutions-index-list {
 }
 
 div.solutions-index-item {
+  margin-bottom: 20px;
+}
+
+div.solutions-index-item-header {
+  display: block;
+  padding: 15px;
+  background-color: #262729;
 }
 
 div.solutions-index-item-author {
   padding: 10px;
-  background-color: #262729;
-  display: block;
+  display: inline;
+}
+
+input.best-practices-vote {
+  padding: 2px 5px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #616161;
+  color: #B3B3B3;
+  float: right;
+  display: inline;
+  transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.best-practices-vote:hover {
+  background-color: #848484;
+  color: #D8D8D8;
+}
+
+input.clever-vote {
+  margin-right: 10px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #616161;
+  color: #B3B3B3;
+  float: right;
+  display: inline;
+  transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.clever-vote:hover {
+  background-color: #848484;
+  color: #D8D8D8;
 }
