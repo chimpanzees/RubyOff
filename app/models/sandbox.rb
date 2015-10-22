@@ -437,6 +437,8 @@ class Sandbox < ActiveRecord::Base
       return {error: "ZeroDivisionError", message: e.message}
     rescue SyntaxError => e
       return {error: "SyntaxError", message: e.message}
+    rescue LocalJumpError => e
+      return {error: "LocalJumpError", message: e.message}
     rescue Shikashi::Timeout::Error => e
       return {error: "TimeoutError", message: "execution time limit exceeded."}
     rescue Timeout::Error => e
