@@ -1,6 +1,20 @@
 SolutionsIndexItem = React.createClass({
-  componentDidMount: function () {
-    
+  handleBestPracticesVote: function (e) {
+    e.preventDefault();
+    ApiUtil.submitVote(
+      "Best Practices",
+      this.props.dataObject.solution.id,
+      this.props.dataObject.solution.question_id
+    );
+  },
+
+  handleCleverVote: function (e) {
+    e.preventDefault();
+    ApiUtil.submitVote(
+      "Clever",
+      this.props.dataObject.solution.id,
+      this.props.dataObject.solution.question_id
+    );
   },
 
   render: function () {
@@ -10,6 +24,9 @@ SolutionsIndexItem = React.createClass({
       theme: "twilight",
       readOnly: true
     };
+
+    var bpButtonValue = this.props.dataObject.best_practices_count + " Best Practices";
+    var cButtonValue = this.props.dataObject.clever_count + " Clever";
 
     return (
       <div className="solutions-index-item">
@@ -22,7 +39,11 @@ SolutionsIndexItem = React.createClass({
         <input className="best-practices-vote"
                type="submit"
                onClick={this.handleBestPracticesVote}
-               value="Best Practices"/>
+               value={bpButtonValue}/>
+        <input className="clever-vote"
+               type="submit"
+               onClick={this.handleCleverVote}
+               value={cButtonValue}/>
       </div>
     );
   }

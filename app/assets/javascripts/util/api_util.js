@@ -57,13 +57,21 @@ ApiUtil = {
     });
   },
 
-  fetchVotes: function (id) {
+  submitVote: function (voteType, solutionId, questionId) {
     $.ajax({
-      url: 'api/index',
-      type: 'get',
-      data: {solution_id: id},
-      success: function (voteCount) {
-        ApiActions.receiveVoteCount(voteCount);
+      url: 'api/votes',
+      type: 'post',
+      data: {
+        vote_type: voteType,
+        solution_id: solutionId,
+        question_id: questionId
+      },
+      success: function (solutions) {
+        if (solutions.success === false) {
+          // already voted for this solution, do nothing!
+        } else {
+          ApiActions.receiveAllSolutions(solutions);
+        }
       }
     });
   }

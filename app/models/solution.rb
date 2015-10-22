@@ -30,7 +30,15 @@ class Solution < ActiveRecord::Base
           {
             "solution" => sol,
             "username" => sol.author.username,
-            "question_title" => sol.question.title
+            "question_title" => sol.question.title,
+            "clever_count" => Solution.where(id: sol.id)
+                                      .collect { |sol| sol.votes}[0]
+                                      .where(name: "Clever")
+                                      .count,
+            "best_practices_count" => Solution.where(id: sol.id)
+                                              .collect { |sol| sol.votes}[0]
+                                              .where(name: "Best Practices")
+                                              .count
           }
         end
   end

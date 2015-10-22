@@ -2,13 +2,15 @@ class Api::VotesController < ApplicationController
   before_filter :require_signed_in!
 
   def create
+    author_id = current_user.id
     @vote = Vote.new({
       name: params[:vote_type],
-      user_id: params[:user_id],
+      user_id: author_id,
       solution_id: params[:solution_id]
     })
     if @vote.save
-      render json: {success: true}
+      @solutions = Solution.all_for_question(params[:question_id])
+      render json: @solutions
     else
       render json: {success: false}
     end
