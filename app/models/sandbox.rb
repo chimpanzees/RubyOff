@@ -418,8 +418,8 @@ class Sandbox < ActiveRecord::Base
     priv.allow_singleton_methods
 
     begin
-      result = Timeout::timeout(1) {
-        s.run :code => string, :privileges => priv, :timeout => 1
+      result = Timeout::timeout(3) {
+        s.run :code => string, :privileges => priv, :timeout => 3
       }
     rescue SecurityError => e
       return {error: "SecurityError", message: e.message}
