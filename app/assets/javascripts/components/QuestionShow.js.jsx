@@ -34,6 +34,7 @@ QuestionShow = React.createClass({
     event.preventDefault();
     ApiActions.receiveSkipRequest()
     var currentQuestion = QuestionStore.currentQuestion();
+    this.setState({question: currentQuestion});
     this.history.pushState(null, "/questions/" + currentQuestion.id, {});
   },
 

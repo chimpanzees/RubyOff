@@ -17,7 +17,6 @@ class Api::SolutionsController < ApplicationController
       if @solution.save
         render json: {saved: true, solution: @solution}
       else
-        fail
         render json: {saved: false}
       end
     else

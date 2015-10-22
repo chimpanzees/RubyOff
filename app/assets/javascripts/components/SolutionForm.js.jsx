@@ -27,6 +27,7 @@ SolutionForm = React.createClass({
   },
 
   _solutionChanged: function () {
+    debugger
     if (SolutionStore.successfulPost()) {
       this.props.history.pushState(null, "/solutions/" + this.state.questionId);
     } else {
