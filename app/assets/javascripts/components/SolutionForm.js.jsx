@@ -19,6 +19,7 @@ SolutionForm = React.createClass({
     this.setState({
       questionId: newProps.question_id,
       body: newProps.solution_default,
+      body_default: newProps.solution_default,
       tests_default: newProps.tests_default,  // for submition
       tests: newProps.tests_default,          // for editing
       output: {}
@@ -48,6 +49,14 @@ SolutionForm = React.createClass({
     e.preventDefault();
     ApiUtil.runTests(this.state.body, this.state.tests);
     this.setState({output: {running: "Running tests"}});
+  },
+
+  handleReset: function (e) {
+    e.preventDefault();
+    this.setState({
+      body: this.state.body_default,
+      tests: this.state.tests_default
+    });
   },
 
   updateBody: function (newBody) {
@@ -113,6 +122,10 @@ SolutionForm = React.createClass({
                  type="submit"
                  onClick={this.handleSubmit}
                  value="Submit"/>
+          <input className="reset-button"
+                 type="submit"
+                 onClick={this.handleReset}
+                 value="Reset"/>
         </form>
         <ul className="solution-form-results">{ results }</ul>
       </div>

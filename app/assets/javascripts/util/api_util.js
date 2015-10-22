@@ -6,6 +6,10 @@ ApiUtil = {
       data: {body: body, tests: tests},
       success: function (results) {
         ApiActions.receiveTestResults(results);
+      },
+      error: function (jqXHRObject, textStatus, errorThrown) {
+        results = {test_0: {error: "TimeoutError", message: "Something went wrong."}};
+        ApiActions.receiveTestResults(results);
       }
     });
   },

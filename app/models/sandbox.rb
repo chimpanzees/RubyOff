@@ -8,6 +8,8 @@
 #
 
 class Sandbox < ActiveRecord::Base
+  require 'timeout'
+
   ALLOWED_METHODS = [
     :+,
     :-,
@@ -410,11 +412,15 @@ class Sandbox < ActiveRecord::Base
     priv = Shikashi::Privileges.new
     priv.allow_const_read "Math" # lets users use the Math module
     ALLOWED_METHODS.each { |method| priv.allow_method(method) }
+    meth = "!=".to_sym  # special case
+    priv.allow_method(meth)
     priv.allow_class_definitions
     priv.allow_singleton_methods
 
     begin
-      result = s.run :code => string, :privileges => priv, :timeout => 3
+      result = Timeout::timeout(1) {
+        s.run :code => string, :privileges => priv, :timeout => 1
+      }
     rescue SecurityError => e
       return {error: "SecurityError", message: e.message}
     rescue ArgumentError => e
@@ -433,6 +439,10 @@ class Sandbox < ActiveRecord::Base
       return {error: "SyntaxError", message: e.message}
     rescue Shikashi::Timeout::Error => e
       return {error: "TimeoutError", message: "execution time limit exceeded."}
+    rescue Timeout::Error => e
+      return {error: "TimeoutError", message: e.message}
+    rescue Timeout::ExitException => e
+      return {error: "TimeoutError", message: e.message}
     end
 
     return {success: result}
