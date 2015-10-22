@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: votings
+#
+#  id          :integer          not null, primary key
+#  solution_id :integer          not null
+#  vote_id     :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  solution_id: 
+  vote_id: 1
+
+two:
+  solution_id: 
+  vote_id: 1

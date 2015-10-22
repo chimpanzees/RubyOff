@@ -55,6 +55,9 @@
           _output = payload.results;
           SolutionStore.emit(CHANGE_EVENT);
           break;
+        case SolutionConstants.VOTE_COUNT_RECEIVED:
+          _successfulPost = false;
+
       }
     })
   });

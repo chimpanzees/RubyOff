@@ -22,6 +22,8 @@ class Solution < ActiveRecord::Base
     foreign_key: :author_id
   )
 
+  has_many :votes
+
   def self.all_for_question(id)
     self.where(question_id: id)
         .collect do |sol|

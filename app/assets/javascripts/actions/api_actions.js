@@ -45,5 +45,12 @@ ApiActions = {
       actionType: SolutionConstants.SOLUTIONS_RECEIVED,
       solutions: solutions
     });
+  },
+
+  receiveVoteCount: function (voteCount) {
+    AppDispatcher.dispatch({
+      actionType: SolutionConstants.VOTE_COUNT_RECEIVED,
+      voteCount: voteCount
+    });
   }
 };

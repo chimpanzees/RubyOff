@@ -55,5 +55,16 @@ ApiUtil = {
         ApiActions.receiveAllSolutions(solutions);
       }
     });
+  },
+
+  fetchVotes: function (id) {
+    $.ajax({
+      url: 'api/index',
+      type: 'get',
+      data: {solution_id: id},
+      success: function (voteCount) {
+        ApiActions.receiveVoteCount(voteCount);
+      }
+    });
   }
 };

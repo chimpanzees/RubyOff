@@ -1,4 +1,8 @@
 SolutionsIndexItem = React.createClass({
+  componentDidMount: function () {
+    
+  },
+
   render: function () {
     var options = {
       lineNumbers: true,
@@ -15,7 +19,10 @@ SolutionsIndexItem = React.createClass({
         <ReactCodeMirror
           value={this.props.dataObject.solution.body}
           options={options}/>
-        <br/>
+        <input className="best-practices-vote"
+               type="submit"
+               onClick={this.handleBestPracticesVote}
+               value="Best Practices"/>
       </div>
     );
   }

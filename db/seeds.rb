@@ -86,6 +86,24 @@ end',
   question_id: question1.id
 )
 
+vote1 = Vote.create!(
+  name: "Best Practices",
+  solution_id: solution1.id,
+  user_id: patrick.id
+)
+
+vote2 = Vote.create!(
+  name: "Best Practices",
+  solution_id: solution1.id,
+  user_id: gunit.id
+)
+
+vote3 = Vote.create!(
+  name: "Clever",
+  solution_id: solution1.id,
+  user_id: minh.id
+)
+
 solution2 = Solution.create!(
   body: 'def self.triple(num)
   str.scan(/\d+/).map(&:to_i).reduce(0, :+)

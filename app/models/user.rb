@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
     foreign_key: :author_id
   )
 
+  has_many :votes
+
   attr_reader :password
 
   after_initialize :ensure_session_token
