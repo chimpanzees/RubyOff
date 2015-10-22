@@ -190,35 +190,90 @@ div.solutions-index-item-author {
   display: inline;
 }
 
-input.best-practices-vote {
-  padding: 2px 5px;
+div.best-practices-vote {
+  padding: 0px 4px 3px;
   border-radius: 4px;
   text-align: center;
   background-color: #616161;
   color: #B3B3B3;
   float: right;
+  position: relative;
+  top: -4px;
   display: inline;
   transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+  div.arrow {
+    background-image: image-url("arrow-up-dark.png");
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    padding: -1px;
+    position: relative;
+    top: 5px;
+    padding-right: 5px;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease-in-out;
+  }
 }
 
-input.best-practices-vote:hover {
+div.best-practices-vote:hover {
   background-color: #848484;
   color: #D8D8D8;
+  div.arrow {
+    background-image: image-url("arrow-up-light.png");
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    padding: -1px;
+    position: relative;
+    top: 5px;
+    padding-right: 5px;
+    background-repeat: no-repeat;
+  }
 }
 
-input.clever-vote {
-  margin-right: 10px;
-  padding: 2px 5px;
+
+div.clever-vote {
+  padding: 0px 4px 3px;
+  margin-right: 14px;
   border-radius: 4px;
   text-align: center;
   background-color: #616161;
   color: #B3B3B3;
   float: right;
+  position: relative;
+  top: -4px;
   display: inline;
   transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+  div.arrow {
+    background-image: image-url("arrow-up-dark.png");
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    padding: -1px;
+    position: relative;
+    top: 5px;
+    padding-right: 5px;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease-in-out;
+  }
 }
 
-input.clever-vote:hover {
+div.clever-vote:hover {
   background-color: #848484;
   color: #D8D8D8;
+  div.arrow {
+    background-image: image-url("arrow-up-light.png");
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    padding: -1px;
+    position: relative;
+    top: 5px;
+    padding-right: 5px;
+    background-repeat: no-repeat;
+  }
 }

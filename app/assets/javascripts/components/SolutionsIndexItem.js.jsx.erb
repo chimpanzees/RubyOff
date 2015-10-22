@@ -25,8 +25,8 @@ SolutionsIndexItem = React.createClass({
       readOnly: true
     };
 
-    var bpButtonValue = this.props.dataObject.best_practices_count + " Best Practices";
-    var cButtonValue = this.props.dataObject.clever_count + " Clever";
+    var bpButtonValue = "Best Practices: " + this.props.dataObject.best_practices_count;
+    var cButtonValue = "Clever: " + this.props.dataObject.clever_count;
 
     return (
       <div className="solutions-index-item">
@@ -34,14 +34,20 @@ SolutionsIndexItem = React.createClass({
           <div className="solutions-index-item-author">
             Author: {this.props.dataObject.username}
           </div>
-          <input className="best-practices-vote"
-                 type="submit"
-                 onClick={this.handleBestPracticesVote}
-                 value={bpButtonValue}/>
-          <input className="clever-vote"
-                 type="submit"
-                 onClick={this.handleCleverVote}
-                 value={cButtonValue}/>
+          <div className="best-practices-vote">
+            <div className="arrow"></div>
+            <input className="best-practices-vote"
+                   type="submit"
+                   onClick={this.handleBestPracticesVote}
+                   value={bpButtonValue}/>
+          </div>
+          <div className="clever-vote">
+            <div className="arrow"></div>
+            <input className="clever-vote"
+                   type="submit"
+                   onClick={this.handleCleverVote}
+                   value={cButtonValue}/>
+          </div>
         </div>
         <ReactCodeMirror
           value={this.props.dataObject.solution.body}
