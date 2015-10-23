@@ -8,6 +8,13 @@ QuestionsIndexItem = React.createClass({
         <div className="question-index-item-author">
           {this.props.question.author.username}
         </div>
+        <ul className="question-index-item-tag-list">
+          {
+            this.props.question.tags.map (function (tag) {
+              return <li>{tag.name}</li>;
+            })
+          }
+        </ul>
       </div>
     );
   }

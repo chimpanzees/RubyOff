@@ -45,6 +45,23 @@ div.question-index-item-title:hover {
   cursor: pointer;
 }
 
+div.question-index-item-author {
+  display: inline;
+}
+
+ul.question-index-item-tag-list {
+  display: inline;
+  li {
+    float: right;
+    padding: 4px 7px;
+    display: block;
+    background-color: #616161;
+    color: #B3B3B3;
+    margin-left: 15px;
+    margin-top: -24px;
+  }
+}
+
 div.question-show-information {
   margin-left: 20px;
   width: 28%;

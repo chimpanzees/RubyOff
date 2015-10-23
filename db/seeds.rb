@@ -25,6 +25,10 @@ self.double(6) == 12
 '
 )
 
+tag1 = Tag.create!(name: "Numbers", question_id: question1.id)
+tag2 = Tag.create!(name: "Fundamentals", question_id: question1.id)
+tag3 = Tag.create!(name: "Mathematics", question_id: question1.id)
+
 sum_digits = Question.create!(
   title: "Sum the digits",
   question: "Given a string consisting of numbers, letters and symbols, write a function that will sum up the numbers.
