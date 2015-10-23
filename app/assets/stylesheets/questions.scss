@@ -12,9 +12,10 @@ div.question-index {
 }
 
 div.question-index-header {
-  width: 97%;
+  width: 71%;
+  float: right;
   padding: 15px;
-  display: block;
+  display: inline-table;
   background-color: #141414;
 }
 
@@ -24,7 +25,8 @@ div.question-index-label {
 }
 
 div.question-index-list {
-  margin-top: 20px;
+  width: 74%;
+  float: right;
 }
 
 div.question-index-item {

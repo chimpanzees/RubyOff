@@ -6,4 +6,35 @@ div.tag-filter-list {
   background-color: #282828;
   padding: 15px;
   margin-bottom: 20px;
+  width: 20%;
+  float: left;
+}
+
+div.tag-filter-list-title {
+  font-size: 20px;
+}
+
+div.tag-filter-list-item {
+  float: left;
+  padding: 4px 7px;
+  display: block;
+  border-radius: 4px;
+  background-color: #616161;
+  color: #B3B3B3;
+  margin-top: 20px;
+  transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+}
+
+div.tag-filter-list-item:hover {
+  cursor: pointer;
+  background-color: #848484;
+  color: #D8D8D8;
+}
+
+div.tag-filter-list-item-title-active {
+  color: #79a0dd;
+}
+
+div.tag-filter-list-item-title-active:hover {
+  color: #B1CFFF;
 }
