@@ -8,6 +8,7 @@
 </head>
 <body>
   <% if !signed_in? %>
+    <div id="landing-container">
     <div class="landing">
       <div class="logo">
         <%= image_tag "logo2.png" %>
@@ -16,6 +17,7 @@
       <%= yield %>
     </div>
   <% else %>
+    <div id="main-container">
     <header class="header">
       <nav class="header-nav group">
         <h1 class="header-logo">
@@ -34,9 +36,6 @@
     </header>
 
     <main class="content group">
-      <section class="content-sidebar">
-
-      </section>
       <section class="content-main">
         <%= render "layouts/errors" %>
         <%= yield %>
@@ -44,16 +43,16 @@
     </main>
   <% end %>
 
-  <footer class="footer group">
-    <ul class="footer-links group">
-      <li>
-        <a href="https://github.com/patricksandquist/RubyOff">See the code.</a>
-      </li>
-      <li>
-        <a href="https://github.com/patricksandquist">More things I've made.</a>
-      </li>
-    </ul>
-
-  </footer>
+<footer class="footer group">
+  <ul class="footer-links group">
+    <li>
+      <a href="https://github.com/patricksandquist/RubyOff">See the code.</a>
+    </li>
+    <li>
+      <a href="https://github.com/patricksandquist">More things I've made.</a>
+    </li>
+  </ul>
+</div>
+</footer>
 </body>
 </html>
