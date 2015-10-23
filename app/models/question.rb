@@ -26,8 +26,12 @@ class Question < ActiveRecord::Base
 
   has_many :tags
 
-  def questions_from_tags(tags)
+  def self.questions_from_tags(tags)
     # Takes in an array of tags
-    Question.includes(:tags).where('tags.name IN (?)', myTags).references(:tags)
+    if tags.length == 0
+      # if no tags are selected, return all of the questions
+      return self.all
+    end
+    self.includes(:tags).where('tags.name IN (?)', tags).references(:tags)
   end
 end

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :solutions, only: [:create, :index]
     resource :sandbox, only: [:create]
     resources :votes, only: [:create, :index, :destroy]
+    resources :tags, only: [:index]
   end
 end

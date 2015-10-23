@@ -46,4 +46,11 @@ ApiActions = {
       solutions: solutions
     });
   },
+
+  receiveTags: function (tags) {
+    AppDispatcher.dispatch({
+      actionType: TagConstants.TAGS_RECEIVED,
+      tags: tags
+    });
+  }
 };

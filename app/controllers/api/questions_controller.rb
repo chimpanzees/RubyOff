@@ -2,7 +2,11 @@ class Api::QuestionsController < ApplicationController
   before_filter :require_signed_in!
 
   def index
-    @questions = Question.all()
+    tags = params[:tags]
+    if tags.nil?
+      tags = []
+    end
+    @questions = Question.questions_from_tags(tags)
   end
 
   def create

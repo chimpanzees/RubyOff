@@ -36,10 +36,14 @@ ApiUtil = {
     });
   },
 
-  fetchQuestions: function () {
+  fetchQuestions: function (tags) {
+    if (typeof tags === 'undefined') {
+      tags = [];
+    }
     $.ajax({
       url: 'api/questions',
       type: 'get',
+      data: {tags: tags},
       success: function (questions) {
         ApiActions.receiveAllQuestions(questions);
       }
@@ -73,6 +77,16 @@ ApiUtil = {
         } else {
           ApiActions.receiveAllSolutions(solutions);
         }
+      }
+    });
+  },
+
+  fetchTags: function () {
+    $.ajax({
+      url: 'api/tags',
+      type: 'get',
+      success: function (tags) {
+        ApiActions.receiveTags(tags);
       }
     });
   }

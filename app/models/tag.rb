@@ -15,7 +15,11 @@ class Tag < ActiveRecord::Base
 
   belongs_to :question
 
-  def self.tags_for_question(id)
-    self.where(question_id: id)
+  # def self.tags_for_question(id)
+  #   self.where(question_id: id)
+  # end
+
+  def self.unique_tags
+    self.uniq.pluck(:name)
   end
 end
