@@ -25,4 +25,9 @@ class Question < ActiveRecord::Base
   )
 
   has_many :tags
+
+  def questions_from_tags(tags)
+    # Takes in an array of tags
+    Question.includes(:tags).where('tags.name IN (?)', myTags).references(:tags)
+  end
 end
