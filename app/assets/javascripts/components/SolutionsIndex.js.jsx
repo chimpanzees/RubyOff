@@ -35,12 +35,12 @@ SolutionsIndex = React.createClass({
 
   toggleSortBy: function (event) {
     event.preventDefault();
+    ApiUtil.fetchSolutions(parseInt(this.props.params.questionId), this.state.otherSort);
     if (this.state.sortBy === "Clever") {
       this.setState({sortBy: "Best Practices", otherSort: "Clever"});
     } else {
       this.setState({otherSort: "Best Practices", sortBy: "Clever"});
     }
-    this._solutionsChanged();
   },
 
   render: function () {
