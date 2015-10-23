@@ -9,7 +9,10 @@ class Api::VotesController < ApplicationController
       solution_id: params[:solution_id]
     })
     if @vote.save
-      @solutions = Solution.all_for_question(params[:question_id])
+      @solutions = Solution.all_for_question(
+        params[:question_id],
+        params[:sort_by]
+      )
       render json: @solutions
     else
       render json: {success: false}

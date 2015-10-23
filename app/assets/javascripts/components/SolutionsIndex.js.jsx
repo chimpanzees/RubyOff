@@ -6,12 +6,12 @@ SolutionsIndex = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function () {
-    return {solutions: []};
+    return {solutions: [], sortBy: "Clever", otherSort: "Best Practices"};
   },
 
   componentDidMount: function () {
     SolutionStore.addChangeListener(this._solutionsChanged);
-    ApiUtil.fetchSolutions(parseInt(this.props.params.questionId));
+    ApiUtil.fetchSolutions(parseInt(this.props.params.questionId), this.state.sortBy);
   },
 
   componentWillUnmount: function () {
@@ -33,6 +33,16 @@ SolutionsIndex = React.createClass({
     this.history.pushState(null, "/questions/" + questionId, {});
   },
 
+  toggleSortBy: function (event) {
+    event.preventDefault();
+    if (this.state.sortBy === "Clever") {
+      this.setState({sortBy: "Best Practices", otherSort: "Clever"});
+    } else {
+      this.setState({otherSort: "Best Practices", sortBy: "Clever"});
+    }
+    this._solutionsChanged();
+  },
+
   render: function () {
     var numSolutions = this.state.solutions.length;
     var question_title = "";
@@ -49,6 +59,10 @@ SolutionsIndex = React.createClass({
           <div className="solutions-index-label">
             {numSolutions}{numSolutions === 1 ? " Solution" : " Solutions"} Returned
           </div>
+          <input className="solutions-index-sort-by"
+                 type="submit"
+                 onClick={this.toggleSortBy}
+                 value={"Sort by: " + this.state.sortBy}/>
           <input className="question-index-button"
                  type="submit"
                  onClick={this.handleIndex}
@@ -63,8 +77,9 @@ SolutionsIndex = React.createClass({
             this.state.solutions.map(function (solution) {
               return <SolutionsIndexItem
                         dataObject={solution}
+                        sortBy={this.state.sortBy}
                         key={solution.solution.id}/>;
-            })
+            }.bind(this))
           }
         </div>
       </div>

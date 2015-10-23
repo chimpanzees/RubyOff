@@ -4,7 +4,8 @@ SolutionsIndexItem = React.createClass({
     ApiUtil.submitVote(
       "Best Practices",
       this.props.dataObject.solution.id,
-      this.props.dataObject.solution.question_id
+      this.props.dataObject.solution.question_id,
+      this.props.sortBy
     );
   },
 
@@ -13,7 +14,8 @@ SolutionsIndexItem = React.createClass({
     ApiUtil.submitVote(
       "Clever",
       this.props.dataObject.solution.id,
-      this.props.dataObject.solution.question_id
+      this.props.dataObject.solution.question_id,
+      this.props.sortBy
     );
   },
 

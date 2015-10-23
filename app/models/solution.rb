@@ -24,22 +24,43 @@ class Solution < ActiveRecord::Base
 
   has_many :votes
 
-  def self.all_for_question(id)
-    self.where(question_id: id)
-        .collect do |sol|
-          {
-            "solution" => sol,
-            "username" => sol.author.username,
-            "question_title" => sol.question.title,
-            "clever_count" => Solution.where(id: sol.id)
-                                      .collect { |sol| sol.votes}[0]
-                                      .where(name: "Clever")
-                                      .count,
-            "best_practices_count" => Solution.where(id: sol.id)
-                                              .collect { |sol| sol.votes}[0]
-                                              .where(name: "Best Practices")
-                                              .count
-          }
-        end
+  def self.all_for_question(id, sort_by)
+    if sort_by == "Clever"
+      self.where(question_id: id)
+          .collect do |sol|
+            {
+              "solution" => sol,
+              "username" => sol.author.username,
+              "question_title" => sol.question.title,
+              "clever_count" => Solution.where(id: sol.id)
+                                        .collect { |sol| sol.votes}[0]
+                                        .where(name: "Clever")
+                                        .count,
+              "best_practices_count" => Solution.where(id: sol.id)
+                                                .collect { |sol| sol.votes}[0]
+                                                .where(name: "Best Practices")
+                                                .count
+            }
+          end
+          .sort! { |h1, h2| h2["clever_count"] <=> h1["clever_count"] }
+    else
+      self.where(question_id: id)
+          .collect do |sol|
+            {
+              "solution" => sol,
+              "username" => sol.author.username,
+              "question_title" => sol.question.title,
+              "clever_count" => Solution.where(id: sol.id)
+                                        .collect { |sol| sol.votes}[0]
+                                        .where(name: "Clever")
+                                        .count,
+              "best_practices_count" => Solution.where(id: sol.id)
+                                                .collect { |sol| sol.votes}[0]
+                                                .where(name: "Best Practices")
+                                                .count
+            }
+          end
+          .sort! { |h1, h2| h2["best_practices_count"] <=> h1["best_practices_count"] }
+    end
   end
 end

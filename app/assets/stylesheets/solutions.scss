@@ -137,6 +137,23 @@ div.solutions-index-label {
   display: inline;
 }
 
+input.solutions-index-sort-by {
+  padding: 7px 12px;
+  margin-top: -7px;
+  font-size: 18px;
+  border-radius: 4px;
+  text-align: center;
+  display: inline;
+  background-color: #616161;
+  color: #B3B3B3;
+  transition: background-color 0.2s ease-in-out, color 0.12s ease-in-out;
+}
+
+input.solutions-index-sort-by:hover {
+  background-color: #848484;
+  color: #D8D8D8;
+}
+
 input.question-index-button {
   font-size: 18px;
   text-align: center;

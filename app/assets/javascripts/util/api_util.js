@@ -46,25 +46,26 @@ ApiUtil = {
     });
   },
 
-  fetchSolutions: function (id) {
+  fetchSolutions: function (id, sortBy) {
     $.ajax({
       url: 'api/solutions',
       type: 'get',
-      data: {question_id: id},
+      data: {question_id: id, sort_by: sortBy},
       success: function (solutions) {
         ApiActions.receiveAllSolutions(solutions);
       }
     });
   },
 
-  submitVote: function (voteType, solutionId, questionId) {
+  submitVote: function (voteType, solutionId, questionId, sortBy) {
     $.ajax({
       url: 'api/votes',
       type: 'post',
       data: {
         vote_type: voteType,
         solution_id: solutionId,
-        question_id: questionId
+        question_id: questionId,
+        sort_by: sortBy
       },
       success: function (solutions) {
         if (solutions.success === false) {
