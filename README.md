@@ -19,6 +19,7 @@ process. It is built using Ruby on Rails and React.js. RubyOff allows users to:
 - [x] Have great syntax highlighting in the sandbox
 - [ ] Search for questions based on tags
 - [ ] Let user write their own coding questions
+- [ ] Let uses follow other users and sort solutions and questions by follow status
 
 ## Design Docs
 * [View Wireframes][view]
