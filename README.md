@@ -1,6 +1,6 @@
 # RubyOff
 
-[Heroku link][heroku]
+[Live site][heroku]
 
 [heroku]: https://rubyoff.herokuapp.com
 
