@@ -391,6 +391,9 @@ class Sandbox < ActiveRecord::Base
     :value?,
     :values,
     :values_at,
+    :is_a?,
+    :even?,
+    :odd?,
     :new,
     :singleton_method_added
   ]
