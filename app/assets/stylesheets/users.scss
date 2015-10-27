@@ -69,6 +69,23 @@ input.sign-up-submit:hover {
   cursor: pointer;
 }
 
+div.demo-login {
+  padding: 15px;
+  margin: 20px auto;
+  background-color: #202123;
+  border-radius: 4px;
+  display: block;
+  color: #a32e2e;
+  width: 20%;
+  text-align: center;
+  transition: background-color 0.12s ease-in-out;
+}
+
+div.demo-login:hover {
+  cursor: pointer;
+  background-color: #0b0c0c;
+}
+
 div.sign-in-link {
   padding: 15px;
   margin: 20px auto 10px;

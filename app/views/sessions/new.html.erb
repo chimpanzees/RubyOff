@@ -12,5 +12,16 @@
   </label>
 
   <input class="sign-in-submit" type="submit" value="Sign In">
+  <div class="demo-login"
+       onclick='
+        var randomString = "Demo" + (Math.round(Math.random() * (999 - 100) + 100));
+        $.ajax({
+          url: "/users",
+          type: "post",
+          data: {user: {username: randomString, password: "alkdjfalsdjf"},
+                 outcomeType: "JS"}
+        });'>
+    Demo
+  </div>
 </form>
 <div class="sign-up-link"><%= link_to "Don't have an account? Sign up instead.", new_user_url %></div>
