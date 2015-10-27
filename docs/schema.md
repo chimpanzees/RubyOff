@@ -31,26 +31,17 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
+question_id | integer   | not null, foreign key (references questions), indexed
 
 ## votes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null, (best practices or clever)
+solution_id | integer   | not null, foreign key (references solutions), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
 
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-question_id | integer   | not null, foreign key (references questions), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
-
-## votings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-solution_id | integer   | not null, foreign key (references solutions), indexed, unique [vote_id]
-vote_id     | integer   | not null, foreign key (references votes), indexed
+## Future
 
 ## followings
 column name | data type | details
