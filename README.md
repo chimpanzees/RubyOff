@@ -3,6 +3,8 @@
 
 [liveLink]: http://www.rubyoff.xyz
 
+![logo]
+
 RubyOff is a web application that makes learning to code a fun and interactive process by letting users attempt coding problems in an interactive console. It is built using Ruby on Rails and React.js and runs foreign code in a secure and controlled sandbox. If users solve the question correctly, their solutions are posted and made public where they may be voted on for being clever or done with best practices.
 
 ## Features
@@ -36,3 +38,4 @@ Other users can submit valid solutions to problem which can then me voted on.
 [schema]: ./docs/schema.md
 [question]: ./app/assets/images/question.png
 [solutions]: ./app/assets/images/solutions.png
+[logo]: ./app/assets/images/logoDark.png
