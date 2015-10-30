@@ -22,10 +22,10 @@ RubyOff is a web application that makes learning to code a fun and interactive p
 
 ## Screenshots
 Code may be edited and run within the app. RubyOff catches common errors such as syntax errors and infinite loops.
-![Question solving]()
+![Question solving]
 
 Other users can submit valid solutions to problem which can then me voted on.
-![Solution index]()
+![Solution index]
 
 ## Design Documents
 * [View Wireframes][view]
@@ -33,3 +33,5 @@ Other users can submit valid solutions to problem which can then me voted on.
 
 [view]: ./docs/views.md
 [schema]: ./docs/schema.md
+[question]: ./app/assets/images/question.png
+[solutions]: ./app/assets/images/solutions.png
