@@ -1,15 +1,11 @@
 # RubyOff
+[Live site][liveLink]
 
-[Live site][heroku]
-
-[heroku]: https://rubyoff.herokuapp.com
+[liveLink]: https://www.rubyoff.xyz
 
 RubyOff is a web application that makes learning to code a fun and interactive process by letting users attempt coding problems in an interactive console. It is built using Ruby on Rails and React.js and runs foreign code in a secure and controlled sandbox. If users solve the question correctly, their solutions are posted and made public where they may be voted on for being clever or done with best practices.
 
-## Minimum Viable Product
-
-RubyOff allows users to:
-
+## Features
 - [x] Create an account
 - [x] Log in / Log out
 - [x] Read coding questions and write solutions in a Ruby sandbox
@@ -18,11 +14,20 @@ RubyOff allows users to:
 - [x] Vote on problem solutions for being clever and/or done with best practices
 - [x] Filter questions with integrated tags
 - [x] Have great syntax highlighting in the sandbox
-- [ ] Search for questions based on tags
-- [ ] Let user write their own coding questions
-- [ ] Let uses follow other users and sort solutions and questions by follow status
 
-## Design Docs
+## TODO
+- [ ] Allow for question searching based on tags and titles
+- [ ] Allow users to write their own coding questions
+- [ ] Let users follow other users and sort solutions and questions by following status
+
+## Screenshots
+Code may be edited and run within the app. RubyOff catches common errors such as syntax errors and infinite loops.
+![Question solving]()
+
+Other users can submit valid solutions to problem which can then me voted on.
+![Solution index]()
+
+## Design Documents
 * [View Wireframes][view]
 * [DB schema][schema]
 
