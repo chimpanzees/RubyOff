@@ -19,6 +19,7 @@ RubyOff is a web application that makes learning to code a fun and interactive p
 - [ ] Allow for question searching based on tags and titles
 - [ ] Allow users to write their own coding questions
 - [ ] Let users follow other users and sort solutions and questions by following status
+- [ ] Group similar solutions together so that only one is shown
 
 ## Screenshots
 Code may be edited and run within the app. RubyOff catches common errors such as syntax errors and infinite loops.
