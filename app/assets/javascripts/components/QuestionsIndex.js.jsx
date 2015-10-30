@@ -69,6 +69,10 @@ QuestionsIndex = React.createClass({
                           onClick={this.toggleTag.bind(this, tag)}/>;
             }.bind(this))
           }
+          <div className="page-guide">
+            Click one of the coding challenges to the right so you can practice Ruby.
+            You can sort the challenges by clicking on the tags above!
+          </div>
         </div>
         <div className="question-index-header">
           <div className="question-index-label">

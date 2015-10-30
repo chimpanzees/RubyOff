@@ -19,6 +19,12 @@ div.question-index-header {
   background-color: #141414;
 }
 
+div.page-guide {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
 div.question-index-label {
   padding: 15px;
   display: inline;
@@ -26,7 +32,7 @@ div.question-index-label {
 
 div.question-index-list {
   width: 780px;
-  display: inline-block;
+  display: table-caption;
   margin-left: 20px;
 }
 
