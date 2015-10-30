@@ -38,4 +38,4 @@ Other users can submit valid solutions to problem which can then me voted on.
 [schema]: ./docs/schema.md
 [question]: ./app/assets/images/question.png
 [solutions]: ./app/assets/images/solutions.png
-[logo]: ./app/assets/images/logoDark.png
+[logo]: ./app/assets/images/logoLight.png
