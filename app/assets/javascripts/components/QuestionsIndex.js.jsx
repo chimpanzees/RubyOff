@@ -60,18 +60,20 @@ QuestionsIndex = React.createClass({
     var numQuestions = this.state.questions.length;
     return (
       <div className="question-index">
-        <div className="tag-filter-list">
-          <div className="tag-filter-list-title">Tags</div>
-          {
-            this.state.tags.map(function (tag) {
-              return <Tag name={tag}
-                          active={this.activeTag(tag)}
-                          onClick={this.toggleTag.bind(this, tag)}/>;
-            }.bind(this))
-          }
+        <div className="left-container">
           <div className="page-guide">
             Click one of the coding challenges to the right so you can practice Ruby.
             You can sort the challenges by clicking on the tags above!
+          </div>
+          <div className="tag-filter-list">
+            <div className="tag-filter-list-title">Tags</div>
+            {
+              this.state.tags.map(function (tag) {
+                return <Tag name={tag}
+                            active={this.activeTag(tag)}
+                            onClick={this.toggleTag.bind(this, tag)}/>;
+              }.bind(this))
+            }
           </div>
         </div>
         <div className="question-index-header">

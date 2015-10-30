@@ -63,7 +63,7 @@ QuestionShow = React.createClass({
           </div>
 
           <div className="question-show-author">
-            By: {author.username}
+            {author.username}
           </div>
 
           <div className="question-show-body">

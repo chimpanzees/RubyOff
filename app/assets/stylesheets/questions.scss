@@ -19,13 +19,23 @@ div.question-index-header {
   background-color: #141414;
 }
 
+div.left-container {
+  float: left;
+  width: 250px;
+}
+
 div.page-guide {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 22px;
+  display: inline;
+  background-color: #282828;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 220px;
+  float: left;
+  font-size: 20px;
 }
 
 div.question-index-label {
+  font-size: 24px;
   padding: 15px;
   display: inline;
 }
@@ -56,6 +66,7 @@ div.question-index-item-title:hover {
 
 div.question-index-item-author {
   display: inline;
+  font-style: italic;
 }
 
 ul.question-index-item-tag-list {
@@ -96,6 +107,8 @@ div.question-show-title {
 
 div.question-show-author {
   padding: 15px;
+  font-style: italic;
+  font-size: 18px;
 }
 
 div.question-show-body {
