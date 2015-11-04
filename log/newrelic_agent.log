@@ -2153,3 +2153,4 @@
 [2015-10-30 13:13:38 -0700 Patrick-Sandquists-MacBook-Pro.local (9026)] INFO : Doing deferred dependency-detection before Rack startup
 [2015-10-30 13:13:39 -0700 Patrick-Sandquists-MacBook-Pro.local (9026)] ERROR : Invalid license key, please contact support@newrelic.com
 [2015-10-30 13:13:39 -0700 Patrick-Sandquists-MacBook-Pro.local (9026)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2015-11-03 13:21:45 -0800 Patrick-Sandquists-MacBook-Pro.local (9026)] INFO : Starting Agent shutdown
