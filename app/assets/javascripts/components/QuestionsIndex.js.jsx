@@ -63,7 +63,7 @@ QuestionsIndex = React.createClass({
         <div className="left-container">
           <div className="page-guide">
             Click one of the coding challenges to the right so you can practice Ruby.
-            You can sort the challenges by clicking on the tags above!
+            You can sort the challenges by clicking on the tags below!
           </div>
           <div className="tag-filter-list">
             <div className="tag-filter-list-title">Tags</div>
