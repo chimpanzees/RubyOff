@@ -31,6 +31,9 @@ Other users can submit valid solutions to problem which can then me voted on.
 * [View Wireframes][view]
 * [DB schema][schema]
 
+## License
+RubyOff is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+
 [view]: ./docs/views.md
 [schema]: ./docs/schema.md
 [question]: ./app/assets/images/question.png
