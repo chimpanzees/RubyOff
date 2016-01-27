@@ -7,12 +7,15 @@ RubyOff is a web application that makes learning to code a fun and interactive p
 ## Features
 - [x] Create an account
 - [x] Log in / Log out
+- [x] Demo login that makes use of the [Faker][FakerLink] gem
 - [x] Read coding questions and write solutions in a Ruby sandbox
 - [x] Run tests on their solutions within the sandbox
 - [x] Submit correct solutions and view other users' solutions
 - [x] Vote on problem solutions for being clever and/or done with best practices
 - [x] Filter questions with integrated tags
 - [x] Have great syntax highlighting in the sandbox
+
+[FakerLink]: https://github.com/stympy/faker
 
 ## TODO
 - [ ] Allow for question searching based on tags and titles
