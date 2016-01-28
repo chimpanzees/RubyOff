@@ -1,6 +1,6 @@
 (function(root) {
-  var _tags = [];
-  var CHANGE_EVENT = "change";
+  var _tags = [],
+      CHANGE_EVENT = "change";
 
   var resetTags = function (tags) {
     _tags = tags.slice();

@@ -1,7 +1,7 @@
 (function(root) {
-  var _questions = [];
-  var _currentQuestion = {};
-  var CHANGE_EVENT = "change";
+  var _questions = [],
+      _currentQuestion = {},
+      CHANGE_EVENT = "change";
 
   var resetQuestions = function (questions) {
     _questions = questions.slice();

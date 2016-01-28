@@ -1,8 +1,8 @@
 (function(root) {
-  var _solutions = [];
-  var _output;
-  var _successfulPost = false;
-  var CHANGE_EVENT = "change";
+  var _solutions = [],
+      _output,
+      _successfulPost = false,
+      CHANGE_EVENT = "change";
 
   function resetSolution(solutions) {
     _solutions = solutions.slice();
